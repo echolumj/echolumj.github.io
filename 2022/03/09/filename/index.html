@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>2022-03-09 github搭建自己的博客 | Hexo</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="新建,模板,小书匠," />
+  
+
+  <meta name="description" content="github Pages——用户编写的、托管在github上的静态网页。 1. Create Personal Repositoriesrepository是一个存放项目文件的仓库，之后博客源码和hexo发布后的静态HTML文件全部保存在里面。  登录自己的github账号   List item   点击右上角的&#39;+&#39;号，选择&#39;New repository&#39;跳转到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022-03-09 github搭建自己的博客">
+<meta property="og:url" content="http://echolumj.github.io/2022/03/09/filename/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="github Pages——用户编写的、托管在github上的静态网页。 1. Create Personal Repositoriesrepository是一个存放项目文件的仓库，之后博客源码和hexo发布后的静态HTML文件全部保存在里面。  登录自己的github账号   List item   点击右上角的&#39;+&#39;号，选择&#39;New repository&#39;跳转到">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646787394576.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646789504705.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646790127731.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646791854153.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646791988174.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646793273967.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646793647947.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646794462009.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646794506564.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646802013452.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646802169727.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646803043590.png">
+<meta property="og:image" content="https://markdown.xiaoshujiang.com/img/spinner.gif">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646804088843.png">
+<meta property="og:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646804215199.png">
+<meta property="article:published_time" content="2022-03-09T06:08:07.071Z">
+<meta property="article:modified_time" content="2022-03-09T06:08:07.218Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="新建,模板,小书匠">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646787394576.png">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    
+<link rel="stylesheet" href="/css/personal-style.css">
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">Posts List</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Create-Personal-Repositories"><span class="toc-text">1. Create Personal Repositories</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Git%E5%AE%89%E8%A3%85"><span class="toc-text">2. Git安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BB%91%E5%AE%9AGitHub"><span class="toc-text">3. 绑定GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AE%9E%E7%8E%B0%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6"><span class="toc-text">4. 实现提交文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%85%B7%E4%BD%93%E7%9A%84BLOG-Pages%E6%90%AD%E5%BB%BA"><span class="toc-text">5.具体的BLOG Pages搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#step1%EF%BC%9A%E5%AE%89%E8%A3%85nodejs"><span class="toc-text">step1：安装nodejs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step2-%E5%AE%89%E8%A3%85Hexo"><span class="toc-text">step2:安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step3-%E5%B0%86%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83%E5%88%B0github%E4%B8%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">step3:将博客发布到github上环境配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step4-%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%8D%A2"><span class="toc-text">step4:主题更换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%B9%8B%E5%90%8E%E8%A6%81%E5%A2%9E%E5%8A%A0%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-text">6.之后要增加的内容</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-filename" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">2022-03-09 github搭建自己的博客</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2022.03.09</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>John Doe</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0-%E6%97%A5%E8%AE%B0-2022-03/">/小书匠/日记/2022-03</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>github Pages——用户编写的、托管在github上的静态网页。</p>
+<h2 id="1-Create-Personal-Repositories"><a href="#1-Create-Personal-Repositories" class="headerlink" title="1. Create Personal Repositories"></a>1. Create Personal Repositories</h2><pre><code>repository是一个存放项目文件的仓库，之后博客源码和hexo发布后的静态HTML文件全部保存在里面。
+
+登录自己的github账号
+</code></pre>
+<ol>
+<li>List item</li>
+</ol>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646787394576.png" alt="enter description here"></p>
+<pre><code>点击右上角的&#39;+&#39;号，选择&#39;New repository&#39;跳转到下面的界面
+</code></pre>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646789504705.png" alt="enter description here"></p>
+<pre><code>Repository name:最好选择-用户名.github.io-的命名格式，之后的site直接为http://username.github.io
+Public/Private:当前创建私有仓库已经免费，如果是个人不想公开的代码和日记等，可以选择Private。已经创建好的仓库也可以转换为另一种权限。
+Initialize this repository with:通常会选择&#39;Add a README file&#39;
+
+创建完毕后，打开仓库，点击⚙setting-Pages，此时界面如下：
+</code></pre>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646790127731.png" alt="enter description here">    </p>
+<pre><code>选择&#39;Choose a theme&#39;暂时选择一个默认网页模板，之后可以修改为自己喜欢的主题。
+至此，一个只有readme文件的空仓库就创建好了。
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/05-hust/articles/13607712.html">不同权限之间的转换方式</a></p>
+<h2 id="2-Git安装"><a href="#2-Git安装" class="headerlink" title="2. Git安装"></a>2. Git安装</h2><pre><code>安装过程参考本节最后的链接，安装好的效果如下：
+</code></pre>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646791854153.png" alt="enter description here"></p>
+<pre><code>打开 Git Bash, 输入git，验证安装是否成功:
+</code></pre>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646791988174.png" alt="enter description here"></p>
+<pre><code>●进行任何操作时，先切换到仓库目录
+●声明为Git仓库+信息提交
+        git init → 初始化本地git仓库
+        git add &lt;file&gt; → 将file添加到[临时缓冲区]
+        git status → 获取仓库当前的状态
+        git commit -m &quot;text commit&quot; → 将[临时缓冲区]的内容提交到仓库
+●关于分支的git指令
+        git branch a → 创建分支a
+        git checkout a → 切换到分支a
+        git checkout -b a → 创建分支a的同时进行切换
+        git merge a → 在主分支下执行，将a分支与主分支进行合并
+        git branch -d/-D a → 删除分支a
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103325381">git下载安装指南</a></p>
+<h2 id="3-绑定GitHub"><a href="#3-绑定GitHub" class="headerlink" title="3. 绑定GitHub"></a>3. 绑定GitHub</h2><pre><code>本地内容怎么投放到github上对应的仓库呢？通过什么协议将本地和自己的github进行绑定呢？
+●利用SSH登录远程主机：
+    method1：口令登录；(需要反复输入密码)
+    method2: 公钥登录；
+●安全外壳协议(SSH)
+</code></pre>
+<p><strong>step1： 确认本机是否是否安装 SSH</strong></p>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646793273967.png" alt="enter description here"></p>
+<p><strong>step2:生成密钥</strong></p>
+<pre><code>    ssh -keygen -t rsa(通过RSA算法实现)
+    id_ras → 密钥(本地)
+    id_rsa.pub → 公钥(添加到github)
+    生成文件的所在路径和目录文件如下：
+</code></pre>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646793647947.png" alt="enter description here"></p>
+<p><strong>step3:将公钥添加到自己的github</strong></p>
+<pre><code>    a. 通过找到相应路径，用文本模式打开id_rsa.pub复制其中的内容
+    b. 直接在git bash中打开，指令如下
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh </span><br><span class="line">$ ls</span><br><span class="line">$ cat id_rsa.pub</span><br></pre></td></tr></table></figure>
+<pre><code>(注：git中的复制粘贴不是 Ctrl+C 和 Ctrl+V，而是 Ctrl+insert 和Shift+insert)
+点击头像-setting-SSH and GPG keys-New SSH key
+</code></pre>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646794462009.png" alt="enter description here"><br><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646794506564.png" alt="enter description here"></p>
+<pre><code>Title:选填
+Key:将公钥文件的内容复制到这里
+</code></pre>
+<p><strong>step4：验证是否绑定成功</strong></p>
+<pre><code>    ssh -T git@github.com (之后键入yes)
+    
+</code></pre>
+<h2 id="4-实现提交文件"><a href="#4-实现提交文件" class="headerlink" title="4. 实现提交文件"></a>4. 实现提交文件</h2><pre><code>pull → 本地 to 远程仓库
+push → 远程仓库 to 本地
+example: git pull/push origin master(branch name)
+
+●情况一:当本地没有 git 仓库
+        a. 直接将远程仓库 clone 到本地(无需通过init进行初始化，并已经自动关联了远程仓库)
+        b. 将文件添加并 commit 到本地仓库
+                git add
+                git commit -m &quot;&quot;
+        c. 将本地仓库的内容push到远程仓库
+        
+●情况二:本地已有Git仓库，并且进行了多次提交
+        a. 关联远程仓库： git remote add origin http://
+        b. 同步远程和本地仓库：git pull origin master(this is branch name)
+        c. 新建file-add-commit
+        d. 将修改后的内容推到远程仓库： git push origin master
+        (注：先pull后push)
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/265454741">将本仓库更新到远程参考</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103391101">两种情况的详细指南</a>            </p>
+<h2 id="5-具体的BLOG-Pages搭建"><a href="#5-具体的BLOG-Pages搭建" class="headerlink" title="5.具体的BLOG Pages搭建"></a>5.具体的BLOG Pages搭建</h2><h3 id="step1：安装nodejs"><a href="#step1：安装nodejs" class="headerlink" title="step1：安装nodejs"></a>step1：安装nodejs</h3><pre><code>下载地址：(https://nodejs.org/en/)
+</code></pre>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646802013452.png" alt="enter description here"></p>
+<pre><code>测试是否安装成功：用 node -v 和 npm -v 命令检查版本
+</code></pre>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646802169727.png" alt="enter description here"></p>
+<pre><code>关于设置npm在安装全局模块时的路径和环境变量(当没有安装在默认路径)
+参考链接：(https://zhuanlan.zhihu.com/p/105715224)
+    
+</code></pre>
+<h3 id="step2-安装Hexo"><a href="#step2-安装Hexo" class="headerlink" title="step2:安装Hexo"></a>step2:安装Hexo</h3><pre><code>a. 通过npm安装hexo：npm install -g hexo-cli
+b. 输入 hexo init 命令初始化博客
+c.相关指令 
+    hexo g → 静态部署
+     hexo s → 本地预览静态网页
+     hexo d → 上传网页文件到github
+</code></pre>
+<h3 id="step3-将博客发布到github上环境配置"><a href="#step3-将博客发布到github上环境配置" class="headerlink" title="step3:将博客发布到github上环境配置"></a>step3:将博客发布到github上环境配置</h3><pre><code>a. 配置blog目录中的_config.yml(注意&quot;:&quot;号后的空格)
+    repo:目标仓库名
+    branch：所在分支(注：这里提交的是hexo相关的框架文件，并不是blog目录文件)
+</code></pre>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646803043590.png" alt="enter description here"></p>
+<pre><code>    ●Deployer配置：
+        error : Deployer not find:git
+        reason: 没安装hexo-deployer-git插件
+        solution: npm install hexo-deployer-git --save
+        
+    输入以下指令：
+        hexo clean → 清除缓存文件 db.json 和已生成的静态文件 public
+        hexo g → 生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)
+        hexo d → 自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
+</code></pre>
+<p><img src="https://markdown.xiaoshujiang.com/img/spinner.gif" alt="enter description here" title="[[[1646803728742]]]"></p>
+<pre><code>●配置url
+    情况一：xxx为用户名
+           url: http://xxx.github.io
+           root: /
+    情况二：xxx不是用户名
+          url: .../xxx.github.io
+          root: /xxx.github.io
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/127786638">config.yml文件内容详解</a></p>
+<h3 id="step4-主题更换"><a href="#step4-主题更换" class="headerlink" title="step4:主题更换"></a>step4:主题更换</h3><p><strong>&#x3D;&#x3D;config.yml文件中相关的部分： #FF5722&#x3D;&#x3D;</strong><br><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646804088843.png" alt="enter description here"><br><strong>&#x3D;&#x3D;themes文件夹中相关的部分： #FF5722&#x3D;&#x3D;</strong></p>
+<pre><code>当前该目录下又两个主题，在config.yml中选择了“fexo”主题
+</code></pre>
+<p><img src="https://github.com/echolumj/blogImg.git/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1646804215199.png"></p>
+<p><strong>&#x3D;&#x3D;主题配置的过程 #FF5722&#x3D;&#x3D;</strong></p>
+<pre><code>1. 在下面的hexo主题集合中选择好自己喜欢的主题
+2. 打开博客根目录Blog文件夹，右键Git Bash，输入如下代码将目标主题下载到目录Blog/themes：
+    git clone (http) themes/next
+3. 修改blog目录下的config.yml文件themes(注意冒号后的空格)
+4. 主题页面的修改文件为主题文件内的_config.yml文件，如何修改参鉴clone地址的readme信息
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://github.com/FoxerLee/awesome-hexo-themes">hexo主题集合</a></p>
+<h2 id="6-之后要增加的内容"><a href="#6-之后要增加的内容" class="headerlink" title="6.之后要增加的内容"></a>6.之后要增加的内容</h2><p><strong>&#x3D;&#x3D;怎么把具体的博客内容发送到自己的pages上<br>怎么把hexo原代码也发送到远程仓库<br>其他一些操作指令<br>小书匠图库的配置<br>…. #F44336&#x3D;&#x3D;</strong></p>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2022/02/17/hello-world/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">Close</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+<!-- Gitalk评论插件通用代码 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<script>
+const gitalk = new Gitalk({
+  clientID: '277317290454635afa73',
+  clientSecret: '78223c859304da5e8d71bfce136d436c6ff95c37',
+  repo: 'blog-comment',
+  owner: 'forsigner',
+  // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
+  // 50个字符串则会报错.
+  // id: location.pathname.split('/').pop().substring(0, 49),
+  id: md5(location.pathname),
+  admin: ['forsigner'],
+  // facebook-like distraction free mode
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
+<!-- Gitalk代码结束 -->
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
