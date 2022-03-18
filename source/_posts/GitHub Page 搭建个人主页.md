@@ -47,7 +47,7 @@ grammar_mark: true
    ●进行任何操作时，先切换到仓库目录
    ●声明为Git仓库+信息提交
     ==git init #F44336== → 初始化本地git仓库 
-   ==git add  filename #F44336== → 将file添加到[临时缓冲区]
+    ==git add  filename #F44336== → 将file添加到[临时缓冲区]
     ==git status #F44336== → 获取仓库当前的状态
 	==git commit -m "text commit" #F44336== → 将[临时缓冲区]的内容提交到仓库
    ●关于分支的git指令
