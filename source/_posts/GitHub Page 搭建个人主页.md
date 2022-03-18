@@ -5,7 +5,7 @@ category: /personal blog/build/2022-03
 renderNumberedHeading: true
 renderMetaTitle: true
 renderMetaTags: true
-grammar_mark: true
+grammar_highlight: true
 grammar_cjkRuby: true
 ---
 
