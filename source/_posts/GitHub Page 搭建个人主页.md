@@ -9,6 +9,11 @@ grammar_cjkRuby: true
 
 
 **github Pages——用户编写的、托管在github上的静态网页**
+
+
+----------
+
+
 ## Create Personal Repositories
 ++repository是一个存放项目文件的仓库，之后博客源码和hexo发布后的静态HTML文件全部保存在里面。++
 
@@ -27,6 +32,10 @@ grammar_cjkRuby: true
 
 **参考链接** 
 [不同权限之间的转换方式](https://www.cnblogs.com/05-hust/articles/13607712.html)
+
+
+----------
+
 
 ## Git安装
 1. 安装过程参考本节最后的链接，安装好的效果如下：
@@ -50,6 +59,10 @@ grammar_cjkRuby: true
 
 **参考链接** 
 [git下载安装指南](https://zhuanlan.zhihu.com/p/103325381)
+
+
+----------
+
 
 ## 绑定GitHub
 1. 本地内容怎么投放到github上对应的仓库呢？通过什么协议将本地和自己的github进行绑定呢？
@@ -86,6 +99,11 @@ grammar_cjkRuby: true
 5. **验证是否绑定成功**
 	==ssh -T git@github.com #F44336== (之后键入yes)
 		
+
+
+----------
+
+
 ## 实现提交文件
 1. 基本指令
 	==pull #F44336== → 本地 to 远程仓库
@@ -115,6 +133,11 @@ grammar_cjkRuby: true
 [将本仓库更新到远程参考](https://zhuanlan.zhihu.com/p/265454741)
 [两种情况的详细指南](https://zhuanlan.zhihu.com/p/103391101)			
 	
+
+
+----------
+
+
 ## 具体的BLOG Pages搭建
 
 1. **安装nodejs**
@@ -179,6 +202,8 @@ grammar_cjkRuby: true
 **参考链接：**
 [hexo主题集合](https://github.com/FoxerLee/awesome-hexo-themes)
 
+
+----------
 
 
 ## 之后要增加的内容
