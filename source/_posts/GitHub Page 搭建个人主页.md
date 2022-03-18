@@ -15,9 +15,7 @@ grammar_cjkRuby: true
 
 
 ----------
-<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
-<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
-<script >hljs.initHighlightingOnLoad();</script>  
+
 
 ## Create Personal Repositories
 ++repository是一个存放项目文件的仓库，之后博客源码和hexo发布后的静态HTML文件全部保存在里面。++
