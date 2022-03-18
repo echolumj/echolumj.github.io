@@ -20,15 +20,15 @@ grammar_cjkRuby: true
 ## Create Personal Repositories
 ++repository是一个存放项目文件的仓库，之后博客源码和hexo发布后的静态HTML文件全部保存在里面。++
 
-1. 登录自己的github账号
+1. **登录自己的github账号**
 ![enter description here](https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647518468944.png)
-2. 点击右上角的'+'号，选择'New repository'跳转到下面的界面
+2. **点击右上角的'+'号，选择'New repository'跳转到下面的界面**
 ![enter description here](https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647518514346.png)	
 **Repository name:** 选择-用户名.github.io-的命名格式，之后的site就直接为http://username.github.io
 **Public/Private:** 当前创建私有仓库已经免费，如果是个人不想公开的代码和日记等，可以选择Private，已经创建好的仓库也可以转换为另一种权限。
 **Initialize this repository with:** 通常会选择'Add a README file'
 
-3. 创建完毕后，打开仓库，点击⚙setting-Pages，此时界面如下：
+3. **创建完毕后，打开仓库，点击⚙setting-Pages，此时界面如下：**
 ![enter description here](https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647519433143.png)
 **Choose a theme：** 暂时选择一个默认网页模板，之后可以修改为自己喜欢的主题。
 至此，一个只有readme文件的空仓库就创建好了。
@@ -41,10 +41,10 @@ grammar_cjkRuby: true
 
 
 ## Git安装
-1. 安装过程参考本节最后的链接，安装好的效果如下：
+1. **安装过程参考本节最后的链接，安装好的效果如下：**
 ![enter description here](https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647520903724.png)
 	
-2. 打开 Git Bash, 输入git，验证安装是否成功:
+2. **打开 Git Bash, 输入git，验证安装是否成功:**
 ![enter description here](https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647520989806.png)
    ●进行任何操作时，先切换到仓库目录
    ●声明为Git仓库+信息提交
@@ -68,7 +68,7 @@ grammar_cjkRuby: true
 
 
 ## 绑定GitHub
-1. 本地内容怎么投放到github上对应的仓库呢？通过什么协议将本地和自己的github进行绑定呢？
+1. **本地内容怎么投放到github上对应的仓库呢？通过什么协议将本地和自己的github进行绑定呢？**
 	●**利用SSH登录远程主机：**
 	==method1 #F44336==：口令登录；(需要反复输入密码  
     ==method2 #F44336==: 公钥登录；
@@ -108,7 +108,7 @@ grammar_cjkRuby: true
 
 
 ## 实现提交文件
-1. 基本指令
+1. **基本指令**
 	==pull #F44336== → 本地 to 远程仓库
 	==push #F44336== → 远程仓库 to 本地
 	example: ==git pull/push origin master #F44336==(branch name)
