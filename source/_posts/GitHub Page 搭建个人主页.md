@@ -3,6 +3,8 @@ title: GitHub Page 搭建个人主页
 tags: GitHub,blog
 category: /personal blog/build/2022-03
 renderNumberedHeading: true
+renderMetaTitle: true
+renderMetaTags: true
 grammar_mark: true
 grammar_cjkRuby: true
 ---
