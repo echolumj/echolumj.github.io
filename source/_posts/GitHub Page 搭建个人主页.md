@@ -143,7 +143,7 @@ grammar_cjkRuby: true
 1. **安装nodejs**
 	[下载地址](https://nodejs.org/en/)
 ![enter description here](https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563732842.png)
-●测试是否安装成功：用 node -v 和 npm -v 命令检查版本
+  ●测试是否安装成功：用 node -v 和 npm -v 命令检查版本
 ![enter description here](https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563776437.png)
 	●关于设置npm在安装全局模块时的路径和环境变量(当没有安装在默认路径)[参考链接](https://zhuanlan.zhihu.com/p/105715224)
 		
