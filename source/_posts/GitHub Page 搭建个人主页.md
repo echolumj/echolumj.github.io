@@ -1,7 +1,7 @@
 ---
 title: GitHub Page 搭建个人主页
 tags: GitHub,blog
-category: /小书匠/日记/2022-03
+category: /personal blog/build/2022-03
 renderNumberedHeading: true
 grammar_cjkRuby: true
 grammar_mark: true
