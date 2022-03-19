@@ -48,16 +48,16 @@ grammar_cjkRuby: true
 ![enter description here](https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647520989806.png)
    ●进行任何操作时，先切换到仓库目录
    ●声明为Git仓库+信息提交
-    ==git init #F44336== → 初始化本地git仓库 
-    ==git add  filename #F44336== → 将file添加到[临时缓冲区]
-    ==git status #F44336== → 获取仓库当前的状态
-	==git commit -m "text commit" #F44336== → 将[临时缓冲区]的内容提交到仓库
+    <mark>git init</mark> → 初始化本地git仓库 
+	<mark>git add  filename</mark> → 将file添加到[临时缓冲区]
+	<mark>git status</mark> → 获取仓库当前的状态
+	<mark>git commit -m "text commit" </mark> → 将[临时缓冲区]的内容提交到仓库
    ●关于分支的git指令
-   ==git branch a #F44336== → 创建分支a
-   ==git checkout a #F44336== → 切换到分支a
-   ==git checkout -b a #F44336== → 创建分支a的同时进行切换
-   ==git merge a #F44336== → 在主分支下执行，将a分支与主分支进行合并
-   ==git branch -d/-D a #F44336== → 删除分支a
+   <mark>git branch a</mark> → 创建分支a
+   <mark>git checkout a</mark> → 切换到分支a
+   <mark>git checkout -b a</mark> → 创建分支a的同时进行切换
+   <mark>git merge a</mark> → 在主分支下执行，将a分支与主分支进行合并
+   <mark>git branch -d/-D a</mark> → 删除分支a
 
 
 **参考链接** 
@@ -70,16 +70,16 @@ grammar_cjkRuby: true
 ## 绑定GitHub
 1. **本地内容怎么投放到github上对应的仓库呢？通过什么协议将本地和自己的github进行绑定呢？**
 	●**利用SSH登录远程主机：**
-	==method1 #F44336==：口令登录；(需要反复输入密码  
-    ==method2 #F44336==: 公钥登录；
+	<mark>method1</mark>：口令登录；(需要反复输入密码  
+	<mark>method2</mark>: 公钥登录；
 	●**安全外壳协议(SSH)**
 2. **确认本机是否是否安装 SSH**
 ![enter description here](https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647522852374.png)
 
 3. **生成密钥**
-	==ssh -keygen -t rsa #F44336==(通过RSA算法实现)
-	==id_ras #F44336== → 密钥(本地)
-	==id_rsa.pub #F44336== → 公钥(添加到github)
+	<mark>ssh -keygen -t rsa</mark>(通过RSA算法实现)
+	<mark>id_ras</mark> → 密钥(本地)
+	<mark>id_rsa.pub</mark> → 公钥(添加到github)
 	
 	生成文件的所在路径和目录文件如下：
 ![enter description here](https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647561811480.png)
@@ -87,9 +87,9 @@ grammar_cjkRuby: true
 4. **将公钥添加到自己的github**
 		●通过找到相应路径，用文本模式打开id_rsa.pub复制其中的内容
 		● 直接在git bash中打开，指令如下
-		==$ cd ~/.ssh #F44336==
-		==$ ls #F44336==
-		==$ cat id_rsa.pub #F44336==
+		<mark>$ cd ~/.ssh</mark>
+		<mark>$ ls</mark>
+		<mark>$ cat id_rsa.pub</mark>
 		(注：git中的复制粘贴不是 Ctrl+C 和 Ctrl+V，而是 Ctrl+insert 和Shift+insert)
 		
 	●点击头像-setting-SSH and GPG keys-New SSH key
@@ -100,7 +100,7 @@ grammar_cjkRuby: true
    **Key:** 将公钥文件的内容复制到这里
 	
 5. **验证是否绑定成功**
-	==ssh -T git@github.com #F44336== (之后键入yes)
+<mark>ssh -T git@github.com</mark> (之后键入yes)
 		
 
 
@@ -109,27 +109,27 @@ grammar_cjkRuby: true
 
 ## 实现提交文件
 1. **基本指令**
-	==pull #F44336== → 本地 to 远程仓库
-	==push #F44336== → 远程仓库 to 本地
-	example: ==git pull/push origin master #F44336==(branch name)
+	<mark>pull</mark> → 本地 to 远程仓库
+	<mark>push #F44336</mark> → 远程仓库 to 本地
+	example: <mark>git pull/push origin master</mark>(branch name)
 	
 	●**情况一:当本地没有 git 仓库**
 			a. 直接将远程仓库 clone 到本地(无需通过init进行初始化，并已经自动关联了远程仓库)
 			b. 将文件添加并 commit 到本地仓库
-			  		==git add #F44336==
-					==git commit -m "" #F44336==
+				<mark>git add</mark>
+				<mark>git commit -m ""</mark>
 			c. 将本地仓库的内容push到远程仓库
 			
 	●**情况二:本地已有Git仓库，并且进行了多次提交**
 			a. 关联远程仓库：
-				==git remote add origin http:// #F44336==
+			<mark>git remote add origin http:// </mark>
 			b. 同步远程和本地仓库：
-				==git pull origin master(this is branch name) #F44336==
+			<mark>git pull origin master(this is branch name) </mark>
 			c. 新建file
-				==git add test,txt #F44336==
-				==git commit -m "add test file" #F44336==
+			<mark>git add test,txt</mark>
+			<mark>git commit -m "add test file"</mark>
 			d. 将修改后的内容推到远程仓库： 
-				==git push origin master #F44336==(同上)
+			<mark>git push origin master</mark>(同上)
 			(注：先pull后push)
 			
 **参考文献**
@@ -153,12 +153,12 @@ grammar_cjkRuby: true
 
 2. **安装Hexo**
 	● 通过npm安装hexo：
-		==npm install -g hexo-cli #F44336==
-	●输入 ==hexo init #F44336== 命令初始化博客
+		<mark>npm install -g hexo-cli #F44336</mark>
+		●输入 <mark>hexo init #F44336</mark> 命令初始化博客
 	●.相关指令 
-		==hexo g #F44336== → 静态部署
-	    ==hexo s #F44336== → 本地预览静态网页
-		==hexo d #F44336== → 上传网页文件到github
+	    <mark>hexo g</mark> → 静态部署
+	    <mark>hexo s </mark> → 本地预览静态网页
+		<mark>hexo d</mark>→ 上传网页文件到github
 
 3. **将博客发布到github上环境配置**
 	● 配置blog目录中的_config.yml(注意":"号后的空格)
@@ -172,8 +172,8 @@ grammar_cjkRuby: true
 			solution: npm install hexo-deployer-git --save
 			
 	●输入以下指令：
-			==hexo clean #F44336== → 清除缓存文件 db.json 和已生成的静态文件 public
-			==hexo g #F44336== → 生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)
+			<mark>hexo clean</mark> → 清除缓存文件 db.json 和已生成的静态文件 public
+			<mark>hexo g</mark>→ 生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)
 			<mark>hexo d</mark> → 自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
 
 	●配置url
