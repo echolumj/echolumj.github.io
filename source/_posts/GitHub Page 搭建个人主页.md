@@ -208,8 +208,12 @@ grammar_cjkRuby: true
 
 
 ## 之后要增加的内容
-<mark>怎么把具体的博客内容发送到自己的pages上
+<mark
+color="red"
+size="1">
+怎么把具体的博客内容发送到自己的pages上
 怎么把hexo原代码也发送到远程仓库
 其他一些操作指令
 小书匠图库的配置
-.... </mark>
+.... 
+</mark>
