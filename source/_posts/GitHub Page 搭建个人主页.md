@@ -196,7 +196,7 @@ grammar_cjkRuby: true
 	●主题配置的过程
 	 a. 在下面的hexo主题集合中选择好自己喜欢的主题
 	 b. 打开博客根目录Blog文件夹，右键Git Bash，输入如下代码将目标主题下载到目录Blog/themes：
-		==git clone (http) themes/next #F44336==
+	 <mark>git clone (http) themes/next</mark>
 	 c. 修改blog目录下的config.yml文件themes(注意冒号后的空格)
 	 d. 主题页面的修改文件为主题文件内的_config.yml文件，如何修改参鉴clone地址的readme信息
 	 
