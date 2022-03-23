@@ -153,35 +153,35 @@ step 2 → Device 支持 blitting from optimal tiled images→<mark>vkCmdBlitIma
  step 3 → Device 不支持 blitting from optimal tiled images→<mark>vkCmdCopyImage</mark>
 
 ``` nix
-		VkImageCopy imageCopyRegion{};
-		imageCopyRegion.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
-		imageCopyRegion.srcSubresource.layerCount = 1;
-		imageCopyRegion.dstSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
-		imageCopyRegion.dstSubresource.layerCount = 1;
-		imageCopyRegion.extent.width = width;
-		imageCopyRegion.extent.height = height;
-		imageCopyRegion.extent.depth = 1;
+VkImageCopy imageCopyRegion{};
+imageCopyRegion.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+imageCopyRegion.srcSubresource.layerCount = 1;
+imageCopyRegion.dstSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+imageCopyRegion.dstSubresource.layerCount = 1;
+imageCopyRegion.extent.width = width;
+imageCopyRegion.extent.height = height;
+imageCopyRegion.extent.depth = 1;
 
-		// Issue the copy command
-		vkCmdCopyImage(
-			commandBuffer,
-			srcImage, VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
-			outputImg, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
-			1,
-			&imageCopyRegion);
+// Issue the copy command
+vkCmdCopyImage(
+	commandBuffer,
+	srcImage, VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
+	outputImg, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
+	1,
+	&imageCopyRegion);
 ```
 
 **5. 进行内存映射，将显存的内容映射到内存**
 	step 1 → 找到subresource 图像数据的起始 offset
 ``` lasso
-	VkImageSubresource subResource{ VK_IMAGE_ASPECT_COLOR_BIT, 0, 0 };
-	VkSubresourceLayout subResourceLayout;
-	vkGetImageSubresourceLayout(logicalDevice, outputImg, &subResource, &subResourceLayout);
+VkImageSubresource subResource{ VK_IMAGE_ASPECT_COLOR_BIT, 0, 0 };
+VkSubresourceLayout subResourceLayout;
+vkGetImageSubresourceLayout(logicalDevice, outputImg, &subResource, &subResourceLayout);
 
-	// Map image memory so we can start copying from it
-	const char* data;
-	vkMapMemory(logicalDevice, outputImgMemory, 0, VK_WHOLE_SIZE, 0, (void**)&data);
-	data += subResourceLayout.offset;
+// Map image memory so we can start copying from it
+const char* data;
+vkMapMemory(logicalDevice, outputImgMemory, 0, VK_WHOLE_SIZE, 0, (void**)&data);
+data += subResourceLayout.offset;
 ```
 
 **参考链接：**
