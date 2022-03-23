@@ -85,7 +85,7 @@ step 4：清理申请的内存
 
 **基本思路：** vulkan中渲染结果放在swapchain image中，程序中往往设定当前swapchain image的数量为物理设备支持的最小swapchain image数量+1,所以要在渲染完之后提交之前，将当前 Swap Chain Image 的内容先存在一块申请的显存上，之后内存映射到内存中。
 
-1. Format问题
+**1. Format问题** 
     当前物理设备支持的swapchain image的格式为：VK_FORMAT_B8G8R8A8_SRGB
 	申请到显存的设定格式：VK_FORMAT_R8G8B8A8_SRGB（创建image以及memory的代码如下）
 ``` scss
@@ -93,14 +93,14 @@ step 4：清理申请的内存
 	VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, outputImg, outputImgMemory);
 ```
 
-2.Layout问题
+**2.Layout问题** 
 	当前swap chain Image的布局：VK_IMAGE_LAYOUT_PRESENT_SRC_KHR
 	作为transfer source的布局：VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL
 	申请到显存的布局：VK_IMAGE_LAYOUT_UNDEFINED
 	作为transfer destination的布局：VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL
 	支持内存映射的布局：VK_IMAGE_LAYOUT_GENERAL
 3.swap chain image和output image之间布局的转换
-**左图为swap chain Image的布局转换；右图为申请到的显存的布局转换** 
+<mark>左图为swap chain Image的布局转换；右图为申请到的显存的布局转换</mark>
 ```mermaid!
 	graph TD;
     VK_IMAGE_LAYOUT_PRESENT_SRC_KHR-->VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL;
@@ -109,6 +109,8 @@ step 4：清理申请的内存
 	VK_IMAGE_LAYOUT_UNDEFINED-->VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL-->VK_IMAGE_LAYOUT_GENERAL
 ```
 4.swap chain image和output image之间内容的copy
+	Device 是否支持 blitting from optimal tiled images？
+	
 
 **参考链接：**
 [截屏原理](https://gavinkg.github.io/ILearnVulkanFromScratch-CN/mdroot/Vulkan%20%E8%BF%9B%E9%98%B6/%E6%88%AA%E5%8F%96%E5%B1%8F%E5%B9%95/%E5%8E%9F%E7%90%86.html)
