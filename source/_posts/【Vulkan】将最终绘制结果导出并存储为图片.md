@@ -183,6 +183,9 @@ const char* data;
 >>==vkMapMemory==<<(logicalDevice, outputImgMemory, 0, VK_WHOLE_SIZE, 0, (void**)&data);
 data += subResourceLayout.offset;
 ```
+**6. 将data数据以ppm格式存入**
+<mark>注意点：</mark>
+  a. 若swapchain image格式为BGR，目标存储格式为RGB，则需要manually swizzle color components
 
 **参考链接：**
 [截屏原理](https://gavinkg.github.io/ILearnVulkanFromScratch-CN/mdroot/Vulkan%20%E8%BF%9B%E9%98%B6/%E6%88%AA%E5%8F%96%E5%B1%8F%E5%B9%95/%E5%8E%9F%E7%90%86.html)
