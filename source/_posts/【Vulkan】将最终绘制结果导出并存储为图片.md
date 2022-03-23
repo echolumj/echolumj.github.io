@@ -110,7 +110,7 @@ step 4：清理申请的内存
 ```
 **4.swap chain image和output image之间内容的copy** 
 	 step 1 → Device 是否支持 blitting from optimal tiled images？
-``` reasonml
+``` javascript
 bool supportsBlit = true;
 VkFormatProperties formatProperties;
 vkGetPhysicalDeviceFormatProperties(physicalDevice, swapChainImageFormat, &formatProperties);
@@ -129,30 +129,30 @@ if (!(formatProperties.linearTilingFeatures & >>==VK_FORMAT_FEATURE_BLIT_DST_BIT
 step 2 → Device 支持 blitting from optimal tiled images→<mark>vkCmdBlitImage</mark>
  
 ``` javascript
-	VkOffset3D blitSize;
-	blitSize.x = width;
-	blitSize.y = height;
-	blitSize.z = 1;
-	VkImageBlit imageBlitRegion{};
-	imageBlitRegion.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
-	imageBlitRegion.srcSubresource.layerCount = 1;
-	imageBlitRegion.srcOffsets[1] = blitSize;
-	imageBlitRegion.dstSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
-	imageBlitRegion.dstSubresource.layerCount = 1;
-	imageBlitRegion.dstOffsets[1] = blitSize;
+VkOffset3D blitSize;
+blitSize.x = width;
+blitSize.y = height;
+blitSize.z = 1;
+VkImageBlit imageBlitRegion{};
+imageBlitRegion.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+imageBlitRegion.srcSubresource.layerCount = 1;
+imageBlitRegion.srcOffsets[1] = blitSize;
+imageBlitRegion.dstSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+imageBlitRegion.dstSubresource.layerCount = 1;
+imageBlitRegion.dstOffsets[1] = blitSize;
 
-	// Issue the blit command
-	vkCmdBlitImage(
-		commandBuffer,
-		srcImage, VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
-		outputImg, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
-		1,
-		&imageBlitRegion,
-		VK_FILTER_NEAREST);
+// Issue the blit command
+vkCmdBlitImage(
+	commandBuffer,
+	srcImage, VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
+	outputImg, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
+	1,
+	&imageBlitRegion,
+	VK_FILTER_NEAREST);
 ```
  step 3 → Device 不支持 blitting from optimal tiled images→<mark>vkCmdCopyImage</mark>
 
-``` nix
+``` javascript
 VkImageCopy imageCopyRegion{};
 imageCopyRegion.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
 imageCopyRegion.srcSubresource.layerCount = 1;
@@ -173,7 +173,7 @@ vkCmdCopyImage(
 
 **5. 进行内存映射，将显存的内容映射到内存**
 	step 1 → 找到subresource 图像数据的起始 offset
-``` lasso
+``` javascript
 VkImageSubresource subResource{ VK_IMAGE_ASPECT_COLOR_BIT, 0, 0 };
 VkSubresourceLayout subResourceLayout;
 vkGetImageSubresourceLayout(logicalDevice, outputImg, &subResource, &subResourceLayout);
