@@ -99,7 +99,7 @@ step 4：清理申请的内存
 	申请到显存的布局：VK_IMAGE_LAYOUT_UNDEFINED
 	作为transfer destination的布局：VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL
 	支持内存映射的布局：VK_IMAGE_LAYOUT_GENERAL
-3.swap chain image和output image之间布局的转换
+**3.swap chain image和output image之间布局的转换** 
 <mark>左图为swap chain Image的布局转换；右图为申请到的显存的布局转换</mark>
 ```mermaid!
 	graph TD;
@@ -108,7 +108,7 @@ step 4：清理申请的内存
 	
 	VK_IMAGE_LAYOUT_UNDEFINED-->VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL-->VK_IMAGE_LAYOUT_GENERAL
 ```
-4.swap chain image和output image之间内容的copy
+**4.swap chain image和output image之间内容的copy** 
 	 step 1 → Device 是否支持 blitting from optimal tiled images？
 ``` reasonml
 	bool supportsBlit = true;
@@ -127,7 +127,31 @@ step 4：清理申请的内存
 	}
 ```
    step 2 → Device 支持 blitting from optimal tiled images
-   
+ 
+``` javascript
+		VkOffset3D blitSize;
+		blitSize.x = width;
+		blitSize.y = height;
+		blitSize.z = 1;
+		VkImageBlit imageBlitRegion{};
+		imageBlitRegion.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+		imageBlitRegion.srcSubresource.layerCount = 1;
+		imageBlitRegion.srcOffsets[1] = blitSize;
+		imageBlitRegion.dstSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+		imageBlitRegion.dstSubresource.layerCount = 1;
+		imageBlitRegion.dstOffsets[1] = blitSize;
+
+		// Issue the blit command
+		vkCmdBlitImage(
+			commandBuffer,
+			srcImage, VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
+			outputImg, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
+			1,
+			&imageBlitRegion,
+			VK_FILTER_NEAREST);
+```
+ step 3 → Device 支持 blitting from optimal tiled images
+
 **参考链接：**
 [截屏原理](https://gavinkg.github.io/ILearnVulkanFromScratch-CN/mdroot/Vulkan%20%E8%BF%9B%E9%98%B6/%E6%88%AA%E5%8F%96%E5%B1%8F%E5%B9%95/%E5%8E%9F%E7%90%86.html)
 [代码参考](https://github.com/SaschaWillems/VulkanCapsViewer/blob/master/vulkancapsviewer.cpp)
