@@ -188,7 +188,7 @@ data += subResourceLayout.offset;
   若swapchain image格式为BGR，目标存储格式为RGB，则需要手动转换color components
   
 ```c++
-if (colorSwizzle)
+if (colorSwizzle
 	{
 		auto a = (char*)row;
 		auto b = (char*)(row+1);
