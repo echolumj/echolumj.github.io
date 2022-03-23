@@ -173,6 +173,17 @@ step 2 → Device 支持 blitting from optimal tiled images→<mark>vkCmdBlitIma
 
 **5. 进行内存映射，将显存的内容映射到内存**
 	step 1 → 找到subresource 图像数据的起始 offset
+``` lasso
+	VkImageSubresource subResource{ VK_IMAGE_ASPECT_COLOR_BIT, 0, 0 };
+	VkSubresourceLayout subResourceLayout;
+	vkGetImageSubresourceLayout(logicalDevice, outputImg, &subResource, &subResourceLayout);
+
+	// Map image memory so we can start copying from it
+	const char* data;
+	vkMapMemory(logicalDevice, outputImgMemory, 0, VK_WHOLE_SIZE, 0, (void**)&data);
+	data += subResourceLayout.offset;
+```
+
 **参考链接：**
 [截屏原理](https://gavinkg.github.io/ILearnVulkanFromScratch-CN/mdroot/Vulkan%20%E8%BF%9B%E9%98%B6/%E6%88%AA%E5%8F%96%E5%B1%8F%E5%B9%95/%E5%8E%9F%E7%90%86.html)
 [代码参考](https://github.com/SaschaWillems/VulkanCapsViewer/blob/master/vulkancapsviewer.cpp)
