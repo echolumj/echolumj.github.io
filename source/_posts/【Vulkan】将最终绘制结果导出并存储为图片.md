@@ -10,3 +10,5 @@ grammar_cjkRuby: true
 如何将vulkan中绘制的结果导出，并且存储为文件格式？
 
 ## OpenGL中获得绘制结果的方法
+GPU渲染的结果保存在显存(帧缓存)中
+glReadPixels：把已经绘制好的像素（它可能已经被保存到显卡的显存中）读取到内存。
