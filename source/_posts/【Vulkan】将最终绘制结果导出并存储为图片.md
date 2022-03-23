@@ -23,3 +23,6 @@ GPU渲染的结果保存在显存(帧缓存)中，想要将保存在显存中的
                                 GLvoid * data）;   →返回像素数据
 ```
 
+
+**参考链接** 
+[双缓冲区模式下读取](https://blog.csdn.net/cd_yourheart/article/details/123528957)
