@@ -54,22 +54,22 @@ GPU渲染的结果保存在显存(帧缓存)中，想要将保存在显存中的
 
 **实现过程：** 
 step 1：申请一块放置读取到像素的内存
-``` javascript
+```c++
 	RGBColor* ColorBuffer = new RGBColor[WindowSizeX * WindowSizeY];
 ```
 step 2：从显存中读取像素
-``` scss
+```c++
 	glReadPixels(0, 0, WindowSizeX, WindowSizeY, GL_BGR, GL_UNSIGNED_BYTE, ColorBuffer);
 ```
 step 3：将数据写入目标图片文件
 
-``` reasonml
+```c++
 	WriteBMP("output.bmp", ColorBuffer, WindowSizeX, WindowSizeY);
 ```
 
 step 4：清理申请的内存
 
-``` gradle
+```c++
 	delete[] ColorBuffer;
 ```
 
@@ -88,8 +88,8 @@ step 4：清理申请的内存
 **1. Format问题** 
     当前物理设备支持的swapchain image的格式为：VK_FORMAT_B8G8R8A8_SRGB
 	申请到显存的设定格式：VK_FORMAT_R8G8B8A8_SRGB（创建image以及memory的代码如下）
-``` scss
-	createImage(WIDTH, HEIGHT, 1, VK_IMAGE_TYPE_2D, >>==VK_FORMAT_R8G8B8A8_SRGB==<<, VK_IMAGE_TILING_LINEAR, >>==VK_IMAGE_USAGE_TRANSFER_DST_BIT==<<,
+```c++
+	createImage(WIDTH, HEIGHT, 1, VK_IMAGE_TYPE_2D, >>==VK_FORMAT_R8G8B8A8_SRGB==<<, VK_IMAGE_TILING_LINEAR, >>==VK_IMAGE_USAGE_TRANSFER_DST_BIT==<<
 	VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, outputImg, outputImgMemory);
 ```
 
