@@ -4,6 +4,35 @@ tags: vulkan,OpenGL
 category: /personal blog/vulkan/2022-03
 renderNumberedHeading: true
 grammar_cjkRuby: true
+grammar_abbr: true
+grammar_table: true
+grammar_defList: true
+grammar_emoji: true
+grammar_footnote: true
+grammar_ins: true
+grammar_mark: true
+grammar_sub: true
+grammar_sup: true
+grammar_checkbox: true
+grammar_mathjax: true
+grammar_flow: true
+grammar_sequence: true
+grammar_code: true
+grammar_highlight: true
+grammar_html: true
+grammar_linkify: true
+grammar_typographer: true
+grammar_video: true
+grammar_audio: true
+grammar_attachment: true
+grammar_mermaid: true
+grammar_classy: true
+grammar_decorate: false
+grammar_attrs: false
+grammar_cjkEmphasis: true
+grammar_center: true
+grammar_align: true
+grammar_tableExtra: true
 ---
 
 
@@ -65,7 +94,14 @@ step 4：清理申请的内存
 	保存结果的图片初始的布局：VK_IMAGE_LAYOUT_UNDEFINED
 	作为transfer destination的布局：VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL
 3.swap chain image和output image之间布局的转换
-	
+
+```mermaid!
+	graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 	
 **参考链接：**
 [截屏原理](https://gavinkg.github.io/ILearnVulkanFromScratch-CN/mdroot/Vulkan%20%E8%BF%9B%E9%98%B6/%E6%88%AA%E5%8F%96%E5%B1%8F%E5%B9%95/%E5%8E%9F%E7%90%86.html)
