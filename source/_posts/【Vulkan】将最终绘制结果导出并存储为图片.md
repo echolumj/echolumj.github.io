@@ -185,7 +185,7 @@ data += subResourceLayout.offset;
 ```
 **6. 将data数据以ppm格式存入**
 <mark>注意点：</mark>
-  a. 若swapchain image格式为BGR，目标存储格式为RGB，则需要手动swizzle color components
+  若swapchain image格式为BGR，目标存储格式为RGB，则需要手动转换color components
   
 ``` javascript
 if (colorSwizzle)
