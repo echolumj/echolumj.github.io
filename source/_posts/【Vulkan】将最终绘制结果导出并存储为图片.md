@@ -11,4 +11,4 @@ grammar_cjkRuby: true
 
 ## OpenGL中获得绘制结果的方法
 GPU渲染的结果保存在显存(帧缓存)中，想要将保存在显存中的结果转存到内存，在opengl中需要用到glReadPixels这个函数。
-**glReadPixels：**把已经绘制好的像素（它可能已经被保存到显卡的显存中）读取到内存。
+**glReadPixels：** 把已经绘制好的像素（它可能已经被保存到显卡的显存中）读取到内存。
