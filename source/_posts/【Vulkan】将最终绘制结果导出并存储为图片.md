@@ -25,7 +25,7 @@ GPU渲染的结果保存在显存(帧缓存)中，想要将保存在显存中的
 
 **实现过程：** 
 		step 1：申请一块放置读取到像素的内存
-		step 2：
+		step 2：从显存中读取像素
 
 **参考链接** 
 [双缓冲区模式下读取](https://blog.csdn.net/cd_yourheart/article/details/123528957)
