@@ -150,7 +150,7 @@ step 2 → Device 支持 blitting from optimal tiled images→<mark>vkCmdBlitIma
 			&imageBlitRegion,
 			VK_FILTER_NEAREST);
 ```
- step 3 → Device 不支持 blitting from optimal tiled images→<mark>vkCmdBlitImage</mark>
+ step 3 → Device 不支持 blitting from optimal tiled images→<mark>vkCmdCopyImage</mark>
 
 ``` nix
 		VkImageCopy imageCopyRegion{};
