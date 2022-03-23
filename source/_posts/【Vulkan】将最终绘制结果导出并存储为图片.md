@@ -83,7 +83,7 @@ step 4：清理申请的内存
 **VS opengl：** 基本过程一致，GPU中保存绘制结果的地方→分配得到的内存。但是，opengl中提供了glReadPixels函数，只需要调用这个函数就可以将绘制结果读取出来，但是vulkan中并没有提供直接的函数。
  
 
-**基本思路：** vulkan中渲染结果放在swapchain image中，程序中往往设定当前swapchain image的数量为物理设备支持的最小swapchain image数量+1,所以要在渲染完之后提交之前，将当前 Swap Chain Image 的内容存在硬盘上。
+**基本思路：** vulkan中渲染结果放在swapchain image中，程序中往往设定当前swapchain image的数量为物理设备支持的最小swapchain image数量+1,所以要在渲染完之后提交之前，将当前 Swap Chain Image 的内容先存在一块申请的显存上，之后内存映射到内存中。
 
 1. Format问题
     当前物理设备支持的swapchain image的格式为：VK_FORMAT_B8G8R8A8_SRGB
