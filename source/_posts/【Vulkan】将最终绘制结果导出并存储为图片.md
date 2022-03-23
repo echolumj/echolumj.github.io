@@ -17,8 +17,8 @@ GPU渲染的结果保存在显存(帧缓存)中，想要将保存在显存中的
 			 void glReadPixels（GLint x, 
 								GLint y,       	   → 左下角坐标
 								GLsizei width,
-                      			GLsizei height,    → 前四个参数描述了一个矩形
-                                GLenum format,
+                      			GLsizei height,    → 前四个参数描述了一个矩形范围
+                                GLenum format,  → 像素存储的格式
                                 GLenum type,
                                 GLvoid * data）;
 ```
