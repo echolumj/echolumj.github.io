@@ -111,44 +111,44 @@ step 4：清理申请的内存
 **4.swap chain image和output image之间内容的copy** 
 	 step 1 → Device 是否支持 blitting from optimal tiled images？
 ``` reasonml
-	bool supportsBlit = true;
-	VkFormatProperties formatProperties;
-	vkGetPhysicalDeviceFormatProperties(physicalDevice, swapChainImageFormat, &formatProperties);
+bool supportsBlit = true;
+VkFormatProperties formatProperties;
+vkGetPhysicalDeviceFormatProperties(physicalDevice, swapChainImageFormat, &formatProperties);
 
-	if (!(formatProperties.optimalTilingFeatures & VK_FORMAT_FEATURE_BLIT_SRC_BIT))
-	{
-		std::cerr << "Device does not support blitting from optimal tiled images, using copy instead of blit!" << std::endl;
-		supportsBlit = false;
-	}
-	
-	if (!(formatProperties.linearTilingFeatures & VK_FORMAT_FEATURE_BLIT_DST_BIT)) {
-		std::cerr << "Device does not support blitting to linear tiled images, using copy instead of blit!" << std::endl;
-		supportsBlit = false;
-	}
+if (!(formatProperties.optimalTilingFeatures &  >>==VK_FORMAT_FEATURE_BLIT_SRC_BIT==<<))
+{
+	std::cerr << "Device does not support blitting from optimal tiled images, using copy instead of blit!" << std::endl;
+	supportsBlit = false;
+}
+
+if (!(formatProperties.linearTilingFeatures & >>==VK_FORMAT_FEATURE_BLIT_DST_BIT==<<)) {
+	std::cerr << "Device does not support blitting to linear tiled images, using copy instead of blit!" << std::endl;
+	supportsBlit = false;
+}
 ```
 step 2 → Device 支持 blitting from optimal tiled images→<mark>vkCmdBlitImage</mark>
  
 ``` javascript
-		VkOffset3D blitSize;
-		blitSize.x = width;
-		blitSize.y = height;
-		blitSize.z = 1;
-		VkImageBlit imageBlitRegion{};
-		imageBlitRegion.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
-		imageBlitRegion.srcSubresource.layerCount = 1;
-		imageBlitRegion.srcOffsets[1] = blitSize;
-		imageBlitRegion.dstSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
-		imageBlitRegion.dstSubresource.layerCount = 1;
-		imageBlitRegion.dstOffsets[1] = blitSize;
+	VkOffset3D blitSize;
+	blitSize.x = width;
+	blitSize.y = height;
+	blitSize.z = 1;
+	VkImageBlit imageBlitRegion{};
+	imageBlitRegion.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+	imageBlitRegion.srcSubresource.layerCount = 1;
+	imageBlitRegion.srcOffsets[1] = blitSize;
+	imageBlitRegion.dstSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+	imageBlitRegion.dstSubresource.layerCount = 1;
+	imageBlitRegion.dstOffsets[1] = blitSize;
 
-		// Issue the blit command
-		vkCmdBlitImage(
-			commandBuffer,
-			srcImage, VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
-			outputImg, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
-			1,
-			&imageBlitRegion,
-			VK_FILTER_NEAREST);
+	// Issue the blit command
+	vkCmdBlitImage(
+		commandBuffer,
+		srcImage, VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
+		outputImg, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
+		1,
+		&imageBlitRegion,
+		VK_FILTER_NEAREST);
 ```
  step 3 → Device 不支持 blitting from optimal tiled images→<mark>vkCmdCopyImage</mark>
 
