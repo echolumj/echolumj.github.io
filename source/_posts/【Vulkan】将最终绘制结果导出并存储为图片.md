@@ -1,10 +1,12 @@
 ---
 title: 【Vulkan】将最终绘制结果导出并存储为图片
-tags: 新建,模板,小书匠
-category: /小书匠/日记/2022-03
+tags: vulkan
+category: /personal blog/vulkan/2022-03
 renderNumberedHeading: true
 grammar_cjkRuby: true
 ---
 
 
-欢迎使用 **{小书匠}(xiaoshujiang)编辑器**，您可以通过 `小书匠主按钮>模板` 里的模板管理来改变新建文章的内容。
+如何将vulkan中绘制的结果导出，并且存储为文件格式？
+
+OpenGL中获得绘制结果的方法
