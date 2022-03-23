@@ -60,7 +60,9 @@ step 4：清理申请的内存
     当前物理设备支持的swapchain image的格式为：VK_FORMAT_B8G8R8A8_SRGB
 	目标存储格式：VK_FORMAT_R8G8B8A8_SRGB
 2.Layout问题
-	
+	当前swap chain Image的布局：VK_IMAGE_LAYOUT_PRESENT_SRC_KHR
+	作为transfer source的布局：VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL
+	保存结果的图片初始的布局：
 	
 	
 **参考链接：**
