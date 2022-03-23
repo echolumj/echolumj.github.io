@@ -126,7 +126,7 @@ step 4：清理申请的内存
 		supportsBlit = false;
 	}
 ```
-   step 2 → Device 支持 blitting from optimal tiled images
+step 2 → Device 支持 blitting from optimal tiled images→<mark>vkCmdBlitImage</mark>
  
 ``` javascript
 		VkOffset3D blitSize;
@@ -150,7 +150,7 @@ step 4：清理申请的内存
 			&imageBlitRegion,
 			VK_FILTER_NEAREST);
 ```
- step 3 → Device 支持 blitting from optimal tiled images
+ step 3 → Device 不支持 blitting from optimal tiled images→<mark>vkCmdBlitImage</mark>
 
 **参考链接：**
 [截屏原理](https://gavinkg.github.io/ILearnVulkanFromScratch-CN/mdroot/Vulkan%20%E8%BF%9B%E9%98%B6/%E6%88%AA%E5%8F%96%E5%B1%8F%E5%B9%95/%E5%8E%9F%E7%90%86.html)
