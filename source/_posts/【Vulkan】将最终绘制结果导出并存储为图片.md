@@ -59,6 +59,8 @@ step 4：清理申请的内存
 1. Format问题
     当前物理设备支持的swapchain image的格式为：VK_FORMAT_B8G8R8A8_SRGB
 	目标存储格式：VK_FORMAT_R8G8B8A8_SRGB
+2.Layout问题
+	
 	
 	
 **参考链接：**
