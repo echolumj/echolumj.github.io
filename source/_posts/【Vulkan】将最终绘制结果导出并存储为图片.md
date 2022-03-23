@@ -23,6 +23,10 @@ GPU渲染的结果保存在显存(帧缓存)中，想要将保存在显存中的
                                 GLvoid * data）;   →返回像素数据
 ```
 
+**实现过程：** 
+		step 1：申请一块放置读取到像素的内存
+		step 2：
 
 **参考链接** 
 [双缓冲区模式下读取](https://blog.csdn.net/cd_yourheart/article/details/123528957)
+[将OpenGL渲染的结果保存为图片](https://blog.csdn.net/u013412391/article/details/120565095)
