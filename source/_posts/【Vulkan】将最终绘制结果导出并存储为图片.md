@@ -51,3 +51,7 @@ step 4：清理申请的内存
 [将OpenGL渲染的结果保存为图片](https://blog.csdn.net/u013412391/article/details/120565095)
 
 ## Vulkan中将绘制结果存储为图片的方法
+**VS opengl：** 
+	基本过程一致，GPU中保存绘制结果的地方→分配得到的内存
+	但是，opengl中提供了glReadPixels函数，只需要调用这个函数就可以将绘制结果读取出来，但是vulkan中并没有提供直接的函数。
+	
