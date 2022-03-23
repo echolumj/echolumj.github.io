@@ -52,10 +52,14 @@ step 4：清理申请的内存
 
 ## Vulkan中将绘制结果存储为图片的方法
 **VS opengl：** 基本过程一致，GPU中保存绘制结果的地方→分配得到的内存。但是，opengl中提供了glReadPixels函数，只需要调用这个函数就可以将绘制结果读取出来，但是vulkan中并没有提供直接的函数。
-
-VK_FORMAT_B8G8R8A8_SRGB 
+ 
 
 **基本思路：** vulkan中渲染结果放在swapchain image中，程序中往往设定当前swapchain image的数量为物理设备支持的最小swapchain image数量+1,所以要在渲染完之后提交之前，将当前 Swap Chain Image 的内容存在硬盘上。
+
+1. Format问题
+    当前物理设备支持的swapchain image的格式为：VK_FORMAT_B8G8R8A8_SRGB
+	目标存储格式：VK_FORMAT_R8G8B8A8_SRGB
+	
 	
 **参考链接：**
 [截屏原理](https://gavinkg.github.io/ILearnVulkanFromScratch-CN/mdroot/Vulkan%20%E8%BF%9B%E9%98%B6/%E6%88%AA%E5%8F%96%E5%B1%8F%E5%B9%95/%E5%8E%9F%E7%90%86.html)
