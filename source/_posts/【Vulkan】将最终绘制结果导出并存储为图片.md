@@ -180,7 +180,7 @@ vkGetImageSubresourceLayout(logicalDevice, outputImg, &subResource, &subResource
 
 // Map image memory so we can start copying from it
 const char* data;
-vkMapMemory(logicalDevice, outputImgMemory, 0, VK_WHOLE_SIZE, 0, (void**)&data);
+>>==vkMapMemory==<<(logicalDevice, outputImgMemory, 0, VK_WHOLE_SIZE, 0, (void**)&data);
 data += subResourceLayout.offset;
 ```
 
