@@ -93,6 +93,7 @@ step 4：清理申请的内存
 	作为transfer source的布局：VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL
 	保存结果的图片初始的布局：VK_IMAGE_LAYOUT_UNDEFINED
 	作为transfer destination的布局：VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL
+	支持内存映射的布局：VK_IMAGE_LAYOUT_GENERAL
 3.swap chain image和output image之间布局的转换
 
 ```mermaid!
