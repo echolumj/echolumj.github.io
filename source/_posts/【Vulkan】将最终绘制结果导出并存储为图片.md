@@ -108,6 +108,7 @@ step 4：清理申请的内存
 	
 	VK_IMAGE_LAYOUT_UNDEFINED-->VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL-->VK_IMAGE_LAYOUT_GENERAL
 ```
+4.swap chain image和output image之间内容的copy
 
 **参考链接：**
 [截屏原理](https://gavinkg.github.io/ILearnVulkanFromScratch-CN/mdroot/Vulkan%20%E8%BF%9B%E9%98%B6/%E6%88%AA%E5%8F%96%E5%B1%8F%E5%B9%95/%E5%8E%9F%E7%90%86.html)
