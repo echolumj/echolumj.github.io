@@ -44,7 +44,8 @@ step 4：清理申请的内存
 	delete[] ColorBuffer;
 ```
 
-注：这个存储的过程要放在OpenGL绘制结束后，在交换缓冲之前进行。
+**注：** 这个存储的过程要放在OpenGL绘制结束后，在交换缓冲之前进行。
+
 **参考链接** 
 [双缓冲区模式下读取](https://blog.csdn.net/cd_yourheart/article/details/123528957)
 [将OpenGL渲染的结果保存为图片](https://blog.csdn.net/u013412391/article/details/120565095)
