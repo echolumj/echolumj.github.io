@@ -110,7 +110,7 @@ step 4：清理申请的内存
 ```
 **4.swap chain image和output image之间内容的copy** 
 	 step 1 → Device 是否支持 blitting from optimal tiled images？
-``` javascript
+``` c++
 bool supportsBlit = true;
 VkFormatProperties formatProperties;
 vkGetPhysicalDeviceFormatProperties(physicalDevice, swapChainImageFormat, &formatProperties);
@@ -128,7 +128,7 @@ if (!(formatProperties.linearTilingFeatures & >>==VK_FORMAT_FEATURE_BLIT_DST_BIT
 ```
 step 2 → Device 支持 blitting from optimal tiled images→<mark>vkCmdBlitImage</mark>
  
-``` javascript
+```c++
 VkOffset3D blitSize;
 blitSize.x = width;
 blitSize.y = height;
@@ -152,7 +152,7 @@ vkCmdBlitImage(
 ```
  step 3 → Device 不支持 blitting from optimal tiled images→<mark>vkCmdCopyImage</mark>
 
-``` javascript
+```c++
 VkImageCopy imageCopyRegion{};
 imageCopyRegion.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
 imageCopyRegion.srcSubresource.layerCount = 1;
@@ -173,7 +173,7 @@ vkCmdCopyImage(
 
 **5. 进行内存映射，将显存的内容映射到内存**
 	step 1 → 找到subresource 图像数据的起始 offset
-``` javascript
+```c++
 VkImageSubresource subResource{ VK_IMAGE_ASPECT_COLOR_BIT, 0, 0 };
 VkSubresourceLayout subResourceLayout;
 vkGetImageSubresourceLayout(logicalDevice, outputImg, &subResource, &subResourceLayout);
@@ -187,7 +187,7 @@ data += subResourceLayout.offset;
 <mark>注意点：</mark>
   若swapchain image格式为BGR，目标存储格式为RGB，则需要手动转换color components
   
-``` javascript
+```c++
 if (colorSwizzle)
 	{
 		auto a = (char*)row;
