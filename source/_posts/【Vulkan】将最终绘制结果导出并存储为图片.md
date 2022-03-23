@@ -87,11 +87,11 @@ step 4：清理申请的内存
 
 1. Format问题
     当前物理设备支持的swapchain image的格式为：VK_FORMAT_B8G8R8A8_SRGB
-	目标存储格式：VK_FORMAT_R8G8B8A8_SRGB
+	申请到显存的格式：VK_FORMAT_R8G8B8A8_SRGB
 2.Layout问题
 	当前swap chain Image的布局：VK_IMAGE_LAYOUT_PRESENT_SRC_KHR
 	作为transfer source的布局：VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL
-	保存结果的图片初始的布局：VK_IMAGE_LAYOUT_UNDEFINED
+	申请到显存的布局：VK_IMAGE_LAYOUT_UNDEFINED
 	作为transfer destination的布局：VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL
 	支持内存映射的布局：VK_IMAGE_LAYOUT_GENERAL
 3.swap chain image和output image之间布局的转换
@@ -103,7 +103,7 @@ step 4：清理申请的内存
 	
 	VK_IMAGE_LAYOUT_UNDEFINED-->VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL-->VK_IMAGE_LAYOUT_GENERAL
 ```
-	
+左图为swap chain Image的布局转换；右图为
 **参考链接：**
 [截屏原理](https://gavinkg.github.io/ILearnVulkanFromScratch-CN/mdroot/Vulkan%20%E8%BF%9B%E9%98%B6/%E6%88%AA%E5%8F%96%E5%B1%8F%E5%B9%95/%E5%8E%9F%E7%90%86.html)
 [代码参考](https://github.com/SaschaWillems/VulkanCapsViewer/blob/master/vulkancapsviewer.cpp)
