@@ -2,8 +2,6 @@
 title: 【Vulkan】将最终绘制结果导出并存储为图片
 tags: vulkan,OpenGL
 category: /personal blog/vulkan/2022-03
-renderNumberedHeading: true
-grammar_cjkRuby: true
 grammar_abbr: true
 grammar_table: true
 grammar_defList: true
@@ -30,6 +28,7 @@ grammar_classy: true
 grammar_decorate: false
 grammar_attrs: false
 grammar_cjkEmphasis: true
+grammar_cjkRuby: true
 grammar_center: true
 grammar_align: true
 grammar_tableExtra: true
