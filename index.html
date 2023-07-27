@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="calm down">
@@ -102,6 +102,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -121,11 +122,38 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -580,6 +608,225 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/2022-03-17%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blog.jpg">
+      <meta itemprop="name" content="Echo">
+      <meta itemprop="description" content="calm down">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Home">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/26/2022-03-17%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">GitHub Page 搭建个人主页</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-26 22:21:11" itemprop="dateCreated datePublished" datetime="2023-07-26T22:21:11+08:00">2023-07-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0-%E6%97%A5%E8%AE%B0-2022-03/" itemprop="url" rel="index"><span itemprop="name">/小书匠/日记/2022-03</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+
+      
+          <p><strong>github Pages——用户编写的、托管在github上的静态网页</strong>
+## Create Personal Repositories
+++repository是一个存放项目文件的仓库，之后博客源码和hexo发布后的静态HTML文件全部保存在里面。++</p>
+<ol type="1">
+<li><p>登录自己的github账号 <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647518468944.png"
+alt="enter description here" /></p></li>
+<li><p>点击右上角的'+'号，选择'New repository'跳转到下面的界面 <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647518514346.png"
+alt="enter description here" /><br />
+<strong>Repository name:</strong>
+选择-用户名.github.io-的命名格式，之后的site就直接为http://username.github.io
+<strong>Public/Private:</strong>
+当前创建私有仓库已经免费，如果是个人不想公开的代码和日记等，可以选择Private，已经创建好的仓库也可以转换为另一种权限。
+<strong>Initialize this repository with:</strong> 通常会选择'Add a
+README file'</p></li>
+<li><p>创建完毕后，打开仓库，点击⚙setting-Pages，此时界面如下： <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647519433143.png"
+alt="enter description here" /> <strong>Choose a theme：</strong>
+暂时选择一个默认网页模板，之后可以修改为自己喜欢的主题。
+至此，一个只有readme文件的空仓库就创建好了。</p></li>
+</ol>
+<p><strong>参考链接</strong> <a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/05-hust/articles/13607712.html">不同权限之间的转换方式</a></p>
+<h2 id="git安装">Git安装</h2>
+<ol type="1">
+<li><p>安装过程参考本节最后的链接，安装好的效果如下： <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647520903724.png"
+alt="enter description here" /></p></li>
+<li><p>打开 Git Bash, 输入git，验证安装是否成功: <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647520989806.png"
+alt="enter description here" /> ●进行任何操作时，先切换到仓库目录
+●声明为Git仓库+信息提交 ==git init #F44336== → 初始化本地git仓库 ==git
+add filename #F44336== → 将file添加到[临时缓冲区] ==git status #F44336==
+→ 获取仓库当前的状态 ==git commit -m "text commit" #F44336== →
+将[临时缓冲区]的内容提交到仓库 ●关于分支的git指令 ==git branch a
+#F44336== → 创建分支a ==git checkout a #F44336== → 切换到分支a ==git
+checkout -b a #F44336== → 创建分支a的同时进行切换 ==git merge a
+#F44336== → 在主分支下执行，将a分支与主分支进行合并 ==git branch -d/-D a
+#F44336== → 删除分支a</p></li>
+</ol>
+<p><strong>参考链接</strong> <a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103325381">git下载安装指南</a></p>
+<h2 id="绑定github">绑定GitHub</h2>
+<ol type="1">
+<li><p>本地内容怎么投放到github上对应的仓库呢？通过什么协议将本地和自己的github进行绑定呢？
+●<strong>利用SSH登录远程主机：</strong> ==method1
+#F44336==：口令登录；(需要反复输入密码<br />
+==method2 #F44336==: 公钥登录；
+●<strong>安全外壳协议(SSH)</strong></p></li>
+<li><p><strong>确认本机是否是否安装 SSH</strong> <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647522852374.png"
+alt="enter description here" /></p></li>
+<li><p><strong>生成密钥</strong> ==ssh -keygen -t rsa
+#F44336==(通过RSA算法实现) ==id_ras #F44336== → 密钥(本地) ==id_rsa.pub
+#F44336== → 公钥(添加到github)</p>
+<p>生成文件的所在路径和目录文件如下： <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647561811480.png"
+alt="enter description here" /></p></li>
+<li><p><strong>将公钥添加到自己的github</strong>
+●通过找到相应路径，用文本模式打开id_rsa.pub复制其中的内容 ● 直接在git
+bash中打开，指令如下 ==$ cd ~/.ssh #F44336== ==$ ls #F44336== ==$ cat
+id_rsa.pub #F44336== (注：git中的复制粘贴不是 Ctrl+C 和 Ctrl+V，而是
+Ctrl+insert 和Shift+insert)</p>
+<p>●点击头像-setting-SSH and GPG keys-New SSH key <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647562157635.png"
+alt="enter description here" /> <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563056861.png"
+alt="enter description here" /></p>
+<p><strong>Title:</strong> 选填 <strong>Key:</strong>
+将公钥文件的内容复制到这里</p></li>
+<li><p><strong>验证是否绑定成功</strong> ==ssh -T git@github.com
+#F44336== (之后键入yes)</p></li>
+</ol>
+<h2 id="实现提交文件">实现提交文件</h2>
+<ol type="1">
+<li><p>基本指令 ==pull #F44336== → 本地 to 远程仓库 ==push #F44336== →
+远程仓库 to 本地 example: ==git pull/push origin master #F44336==(branch
+name)</p>
+<p>●<strong>情况一:当本地没有 git 仓库</strong> a. 直接将远程仓库 clone
+到本地(无需通过init进行初始化，并已经自动关联了远程仓库) b. 将文件添加并
+commit 到本地仓库 ==git add #F44336== ==git commit -m "" #F44336== c.
+将本地仓库的内容push到远程仓库</p>
+<p>●<strong>情况二:本地已有Git仓库，并且进行了多次提交</strong> a.
+关联远程仓库： ==git remote add origin http:// #F44336== b.
+同步远程和本地仓库： ==git pull origin master(this is branch name)
+#F44336== c. 新建file ==git add test,txt #F44336== ==git commit -m "add
+test file" #F44336== d. 将修改后的内容推到远程仓库： ==git push origin
+master #F44336==(同上) (注：先pull后push)</p></li>
+</ol>
+<p><strong>参考文献</strong> <a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/265454741">将本仓库更新到远程参考</a>
+<a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103391101">两种情况的详细指南</a></p>
+<h2 id="具体的blog-pages搭建">具体的BLOG Pages搭建</h2>
+<ol type="1">
+<li><p><strong>安装nodejs</strong> <a
+target="_blank" rel="noopener" href="https://nodejs.org/en/">下载地址</a> <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563732842.png"
+alt="enter description here" /></p>
+<p>●测试是否安装成功：用 node -v 和 npm -v 命令检查版本 <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563776437.png"
+alt="enter description here" /></p>
+<p>●关于设置npm在安装全局模块时的路径和环境变量(当没有安装在默认路径)<a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/105715224">参考链接</a></p></li>
+<li><p><strong>安装Hexo</strong> ● 通过npm安装hexo： ==npm install -g
+hexo-cli #F44336== ●输入 ==hexo init #F44336== 命令初始化博客 ●.相关指令
+==hexo g #F44336== → 静态部署 ==hexo s #F44336== → 本地预览静态网页
+==hexo d #F44336== → 上传网页文件到github</p></li>
+<li><p><strong>将博客发布到github上环境配置</strong> ●
+配置blog目录中的_config.yml(注意":"号后的空格) <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564081849.png"
+alt="enter description here" /> <strong>repo:</strong> 目标仓库名
+<strong>branch：</strong>
+所在分支(注：这里提交的是hexo相关的框架文件，并不是blog目录文件)</p>
+<p>●Deployer配置： error : Deployer not find:git reason:
+没安装hexo-deployer-git插件 solution: npm install hexo-deployer-git
+--save</p>
+<p>●输入以下指令： ==hexo clean #F44336== → 清除缓存文件 db.json
+和已生成的静态文件 public ==hexo g #F44336== →
+生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写) ==hexo
+d #F44336== → 自动生成网站静态文件，并部署到设定的仓库(hexo deploy
+的缩写)</p>
+<p>●配置url <strong>情况一：xxx为用户名</strong> url:
+http://xxx.github.io root: / <strong>情况二：xxx不是用户名</strong> url:
+.../xxx.github.io root: /xxx.github.io</p></li>
+</ol>
+<p><strong>参考链接</strong> <a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/127786638">config.yml文件内容详解</a></p>
+<ol start="4" type="1">
+<li><strong>主题更换</strong> ●config.yml文件中相关的部分： <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564319699.png"
+alt="Extensions part" /> ●themes文件夹中相关的部分：
+当前该目录下又两个主题，在config.yml中选择了“fexo”主题 <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564488865.png"
+alt="enter description here" /> ●主题配置的过程
+<ol type="a">
+<li>在下面的hexo主题集合中选择好自己喜欢的主题</li>
+<li>打开博客根目录Blog文件夹，右键Git
+Bash，输入如下代码将目标主题下载到目录Blog/themes： ==git clone (http)
+themes/next #F44336==</li>
+<li>修改blog目录下的config.yml文件themes(注意冒号后的空格)</li>
+<li>主题页面的修改文件为主题文件内的_config.yml文件，如何修改参鉴clone地址的readme信息</li>
+</ol></li>
+</ol>
+<p><strong>参考链接：</strong> <a
+target="_blank" rel="noopener" href="https://github.com/FoxerLee/awesome-hexo-themes">hexo主题集合</a></p>
+<h2 id="之后要增加的内容">之后要增加的内容</h2>
+<p>==怎么把具体的博客内容发送到自己的pages上
+怎么把hexo原代码也发送到远程仓库 其他一些操作指令 小书匠图库的配置 ....
+#3F51B5==</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/2022-02-28test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -791,225 +1038,6 @@ target="_blank" rel="noopener" href="https://github.com/FoxerLee/awesome-hexo-th
 <p><mark> 怎么把具体的博客内容发送到自己的pages上
 怎么把hexo原代码也发送到远程仓库 其他一些操作指令 小书匠图库的配置 ....
 </mark></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/2022-03-17%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blog.jpg">
-      <meta itemprop="name" content="Echo">
-      <meta itemprop="description" content="calm down">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Home">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/26/2022-03-17%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">GitHub Page 搭建个人主页</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-07-26 22:21:11" itemprop="dateCreated datePublished" datetime="2023-07-26T22:21:11+08:00">2023-07-26</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0-%E6%97%A5%E8%AE%B0-2022-03/" itemprop="url" rel="index"><span itemprop="name">/小书匠/日记/2022-03</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-
-      
-          <p><strong>github Pages——用户编写的、托管在github上的静态网页</strong>
-## Create Personal Repositories
-++repository是一个存放项目文件的仓库，之后博客源码和hexo发布后的静态HTML文件全部保存在里面。++</p>
-<ol type="1">
-<li><p>登录自己的github账号 <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647518468944.png"
-alt="enter description here" /></p></li>
-<li><p>点击右上角的'+'号，选择'New repository'跳转到下面的界面 <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647518514346.png"
-alt="enter description here" /><br />
-<strong>Repository name:</strong>
-选择-用户名.github.io-的命名格式，之后的site就直接为http://username.github.io
-<strong>Public/Private:</strong>
-当前创建私有仓库已经免费，如果是个人不想公开的代码和日记等，可以选择Private，已经创建好的仓库也可以转换为另一种权限。
-<strong>Initialize this repository with:</strong> 通常会选择'Add a
-README file'</p></li>
-<li><p>创建完毕后，打开仓库，点击⚙setting-Pages，此时界面如下： <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647519433143.png"
-alt="enter description here" /> <strong>Choose a theme：</strong>
-暂时选择一个默认网页模板，之后可以修改为自己喜欢的主题。
-至此，一个只有readme文件的空仓库就创建好了。</p></li>
-</ol>
-<p><strong>参考链接</strong> <a
-target="_blank" rel="noopener" href="https://www.cnblogs.com/05-hust/articles/13607712.html">不同权限之间的转换方式</a></p>
-<h2 id="git安装">Git安装</h2>
-<ol type="1">
-<li><p>安装过程参考本节最后的链接，安装好的效果如下： <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647520903724.png"
-alt="enter description here" /></p></li>
-<li><p>打开 Git Bash, 输入git，验证安装是否成功: <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647520989806.png"
-alt="enter description here" /> ●进行任何操作时，先切换到仓库目录
-●声明为Git仓库+信息提交 ==git init #F44336== → 初始化本地git仓库 ==git
-add filename #F44336== → 将file添加到[临时缓冲区] ==git status #F44336==
-→ 获取仓库当前的状态 ==git commit -m "text commit" #F44336== →
-将[临时缓冲区]的内容提交到仓库 ●关于分支的git指令 ==git branch a
-#F44336== → 创建分支a ==git checkout a #F44336== → 切换到分支a ==git
-checkout -b a #F44336== → 创建分支a的同时进行切换 ==git merge a
-#F44336== → 在主分支下执行，将a分支与主分支进行合并 ==git branch -d/-D a
-#F44336== → 删除分支a</p></li>
-</ol>
-<p><strong>参考链接</strong> <a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103325381">git下载安装指南</a></p>
-<h2 id="绑定github">绑定GitHub</h2>
-<ol type="1">
-<li><p>本地内容怎么投放到github上对应的仓库呢？通过什么协议将本地和自己的github进行绑定呢？
-●<strong>利用SSH登录远程主机：</strong> ==method1
-#F44336==：口令登录；(需要反复输入密码<br />
-==method2 #F44336==: 公钥登录；
-●<strong>安全外壳协议(SSH)</strong></p></li>
-<li><p><strong>确认本机是否是否安装 SSH</strong> <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647522852374.png"
-alt="enter description here" /></p></li>
-<li><p><strong>生成密钥</strong> ==ssh -keygen -t rsa
-#F44336==(通过RSA算法实现) ==id_ras #F44336== → 密钥(本地) ==id_rsa.pub
-#F44336== → 公钥(添加到github)</p>
-<p>生成文件的所在路径和目录文件如下： <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647561811480.png"
-alt="enter description here" /></p></li>
-<li><p><strong>将公钥添加到自己的github</strong>
-●通过找到相应路径，用文本模式打开id_rsa.pub复制其中的内容 ● 直接在git
-bash中打开，指令如下 ==$ cd ~/.ssh #F44336== ==$ ls #F44336== ==$ cat
-id_rsa.pub #F44336== (注：git中的复制粘贴不是 Ctrl+C 和 Ctrl+V，而是
-Ctrl+insert 和Shift+insert)</p>
-<p>●点击头像-setting-SSH and GPG keys-New SSH key <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647562157635.png"
-alt="enter description here" /> <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563056861.png"
-alt="enter description here" /></p>
-<p><strong>Title:</strong> 选填 <strong>Key:</strong>
-将公钥文件的内容复制到这里</p></li>
-<li><p><strong>验证是否绑定成功</strong> ==ssh -T git@github.com
-#F44336== (之后键入yes)</p></li>
-</ol>
-<h2 id="实现提交文件">实现提交文件</h2>
-<ol type="1">
-<li><p>基本指令 ==pull #F44336== → 本地 to 远程仓库 ==push #F44336== →
-远程仓库 to 本地 example: ==git pull/push origin master #F44336==(branch
-name)</p>
-<p>●<strong>情况一:当本地没有 git 仓库</strong> a. 直接将远程仓库 clone
-到本地(无需通过init进行初始化，并已经自动关联了远程仓库) b. 将文件添加并
-commit 到本地仓库 ==git add #F44336== ==git commit -m "" #F44336== c.
-将本地仓库的内容push到远程仓库</p>
-<p>●<strong>情况二:本地已有Git仓库，并且进行了多次提交</strong> a.
-关联远程仓库： ==git remote add origin http:// #F44336== b.
-同步远程和本地仓库： ==git pull origin master(this is branch name)
-#F44336== c. 新建file ==git add test,txt #F44336== ==git commit -m "add
-test file" #F44336== d. 将修改后的内容推到远程仓库： ==git push origin
-master #F44336==(同上) (注：先pull后push)</p></li>
-</ol>
-<p><strong>参考文献</strong> <a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/265454741">将本仓库更新到远程参考</a>
-<a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103391101">两种情况的详细指南</a></p>
-<h2 id="具体的blog-pages搭建">具体的BLOG Pages搭建</h2>
-<ol type="1">
-<li><p><strong>安装nodejs</strong> <a
-target="_blank" rel="noopener" href="https://nodejs.org/en/">下载地址</a> <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563732842.png"
-alt="enter description here" /></p>
-<p>●测试是否安装成功：用 node -v 和 npm -v 命令检查版本 <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563776437.png"
-alt="enter description here" /></p>
-<p>●关于设置npm在安装全局模块时的路径和环境变量(当没有安装在默认路径)<a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/105715224">参考链接</a></p></li>
-<li><p><strong>安装Hexo</strong> ● 通过npm安装hexo： ==npm install -g
-hexo-cli #F44336== ●输入 ==hexo init #F44336== 命令初始化博客 ●.相关指令
-==hexo g #F44336== → 静态部署 ==hexo s #F44336== → 本地预览静态网页
-==hexo d #F44336== → 上传网页文件到github</p></li>
-<li><p><strong>将博客发布到github上环境配置</strong> ●
-配置blog目录中的_config.yml(注意":"号后的空格) <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564081849.png"
-alt="enter description here" /> <strong>repo:</strong> 目标仓库名
-<strong>branch：</strong>
-所在分支(注：这里提交的是hexo相关的框架文件，并不是blog目录文件)</p>
-<p>●Deployer配置： error : Deployer not find:git reason:
-没安装hexo-deployer-git插件 solution: npm install hexo-deployer-git
---save</p>
-<p>●输入以下指令： ==hexo clean #F44336== → 清除缓存文件 db.json
-和已生成的静态文件 public ==hexo g #F44336== →
-生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写) ==hexo
-d #F44336== → 自动生成网站静态文件，并部署到设定的仓库(hexo deploy
-的缩写)</p>
-<p>●配置url <strong>情况一：xxx为用户名</strong> url:
-http://xxx.github.io root: / <strong>情况二：xxx不是用户名</strong> url:
-.../xxx.github.io root: /xxx.github.io</p></li>
-</ol>
-<p><strong>参考链接</strong> <a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/127786638">config.yml文件内容详解</a></p>
-<ol start="4" type="1">
-<li><strong>主题更换</strong> ●config.yml文件中相关的部分： <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564319699.png"
-alt="Extensions part" /> ●themes文件夹中相关的部分：
-当前该目录下又两个主题，在config.yml中选择了“fexo”主题 <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564488865.png"
-alt="enter description here" /> ●主题配置的过程
-<ol type="a">
-<li>在下面的hexo主题集合中选择好自己喜欢的主题</li>
-<li>打开博客根目录Blog文件夹，右键Git
-Bash，输入如下代码将目标主题下载到目录Blog/themes： ==git clone (http)
-themes/next #F44336==</li>
-<li>修改blog目录下的config.yml文件themes(注意冒号后的空格)</li>
-<li>主题页面的修改文件为主题文件内的_config.yml文件，如何修改参鉴clone地址的readme信息</li>
-</ol></li>
-</ol>
-<p><strong>参考链接：</strong> <a
-target="_blank" rel="noopener" href="https://github.com/FoxerLee/awesome-hexo-themes">hexo主题集合</a></p>
-<h2 id="之后要增加的内容">之后要增加的内容</h2>
-<p>==怎么把具体的博客内容发送到自己的pages上
-怎么把hexo原代码也发送到远程仓库 其他一些操作指令 小书匠图库的配置 ....
-#3F51B5==</p>
 
       
     </div>
@@ -1277,6 +1305,10 @@ alt="概率密度转换" /></p>
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
