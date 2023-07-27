@@ -15,16 +15,16 @@
     <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
   
 
-  <meta name="description" content="光线与几种基本几何的求交[toc] 1. 光线与二维几何求交1) 光线与平面求交 $$\begin{cases} \bold P &#x3D; \bold o + t \cdot \bold d \ \ \bold n \cdot (\bold P -\bold P’)&#x3D;0\end{cases}$$ $$ $$">
+  <meta name="description" content="光线求交[toc] 1. 光线与二维几何求交1) 光线与平面求交 $$\begin{cases} \bold P &#x3D; \bold o + t \cdot \bold d \ \ \bold n \cdot (\bold P -\bold P’)&#x3D;0\end{cases}$$ $$ $$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/2023/07/26/%E5%85%89%E7%BA%BF%E4%B8%8E%E5%87%A0%E7%A7%8D%E5%9F%BA%E6%9C%AC%E5%87%A0%E4%BD%95%E7%9A%84%E6%B1%82%E4%BA%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="光线与几种基本几何的求交[toc] 1. 光线与二维几何求交1) 光线与平面求交 $$\begin{cases} \bold P &#x3D; \bold o + t \cdot \bold d \ \ \bold n \cdot (\bold P -\bold P’)&#x3D;0\end{cases}$$ $$ $$">
+<meta property="og:description" content="光线求交[toc] 1. 光线与二维几何求交1) 光线与平面求交 $$\begin{cases} \bold P &#x3D; \bold o + t \cdot \bold d \ \ \bold n \cdot (\bold P -\bold P’)&#x3D;0\end{cases}$$ $$ $$">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="e:/MyBlog/source_posts/images/23-7-26.png">
 <meta property="article:published_time" content="2023-07-26T14:21:11.769Z">
-<meta property="article:modified_time" content="2023-07-26T15:36:02.478Z">
+<meta property="article:modified_time" content="2023-07-27T11:00:49.942Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="e:/MyBlog/source_posts/images/23-7-26.png">
@@ -199,7 +199,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">Posts List</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%89%E7%BA%BF%E4%B8%8E%E5%87%A0%E7%A7%8D%E5%9F%BA%E6%9C%AC%E5%87%A0%E4%BD%95%E7%9A%84%E6%B1%82%E4%BA%A4"><span class="toc-text">光线与几种基本几何的求交</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%85%89%E7%BA%BF%E4%B8%8E%E4%BA%8C%E7%BB%B4%E5%87%A0%E4%BD%95%E6%B1%82%E4%BA%A4"><span class="toc-text">1. 光线与二维几何求交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%85%89%E7%BA%BF%E4%B8%8E%E5%B9%B3%E9%9D%A2%E6%B1%82%E4%BA%A4"><span class="toc-text">1) 光线与平面求交</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%89%E7%BA%BF%E6%B1%82%E4%BA%A4"><span class="toc-text">光线求交</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%85%89%E7%BA%BF%E4%B8%8E%E4%BA%8C%E7%BB%B4%E5%87%A0%E4%BD%95%E6%B1%82%E4%BA%A4"><span class="toc-text">1. 光线与二维几何求交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%85%89%E7%BA%BF%E4%B8%8E%E5%B9%B3%E9%9D%A2%E6%B1%82%E4%BA%A4"><span class="toc-text">1) 光线与平面求交</span></a></li></ol></li></ol></li></ol>
   </div>
 
 
@@ -240,7 +240,7 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <h1 id="光线与几种基本几何的求交"><a href="#光线与几种基本几何的求交" class="headerlink" title="光线与几种基本几何的求交"></a><center>光线与几种基本几何的求交</center></h1><p>[toc]</p>
+      <h1 id="光线求交"><a href="#光线求交" class="headerlink" title="光线求交"></a><center>光线求交</center></h1><p>[toc]</p>
 <h3 id="1-光线与二维几何求交"><a href="#1-光线与二维几何求交" class="headerlink" title="1. 光线与二维几何求交"></a>1. 光线与二维几何求交</h3><h3 id="1-光线与平面求交"><a href="#1-光线与平面求交" class="headerlink" title="1) 光线与平面求交"></a>1) 光线与平面求交</h3><p><img src="E:\MyBlog\source_posts\images\23-7-26.png" alt="23-7-26"></p>
 <p>$$<br>\begin{cases} \bold P &#x3D; \bold o + t \cdot \bold d \ \ \bold n \cdot (\bold P -\bold P’)&#x3D;0\end{cases}<br>$$</p>
 <p>$$</p>
@@ -282,7 +282,7 @@ ga('send', 'pageview');
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2023/07/26/%E3%80%90Vulkan+Qt%E3%80%91/">
+    <a class="show pull-left" href="/2023/07/26/%E3%80%8ARay%20Tracing%20in%20One%20Weekend%E3%80%8Bnote-chart1-2/">
         <i class="icon icon-angle-left"></i>
     </a>
     <a class="hide pull-right" href="/">
