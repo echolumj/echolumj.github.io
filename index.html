@@ -205,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-28 22:34:46" itemprop="dateModified" datetime="2023-07-28T22:34:46+08:00">2023-07-28</time>
+                <time title="Modified: 2023-07-29 12:02:42" itemprop="dateModified" datetime="2023-07-29T12:02:42+08:00">2023-07-29</time>
               </span>
 
           
@@ -236,8 +236,8 @@ alt="image-20230728184215996" />
 <figcaption aria-hidden="true">image-20230728184215996</figcaption>
 </figure>
 <p><span class="math display">\[
-\begin{cases}\boldsymbol P=\boldsymbol o+t\cdot\boldsymbol
-d\\\\\boldsymbol n\cdot(\boldsymbol P-\boldsymbol P&#39;)=0\end{cases}
+\begin{cases}\boldsymbol P=\boldsymbol o+t*\boldsymbol d\\\\\boldsymbol
+n\cdot(\boldsymbol P-\boldsymbol P&#39;)=0\end{cases}
 \]</span></p>
 <p><img
 src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/image-20230728192149842.png"
@@ -262,8 +262,8 @@ class="math inline">\(t&lt;0\)</span>时，无交点.</p>
 <p><img
 src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/image-20230728191609336.png"
 alt="image-20230728191609336" /> <span class="math display">\[
-\begin{cases}\boldsymbol P=\boldsymbol o+t\cdot\boldsymbol
-d\\\\\boldsymbol n\cdot(\boldsymbol P-\boldsymbol c)=0\\\\
+\begin{cases}\boldsymbol P=\boldsymbol o+t*\boldsymbol d\\\\\boldsymbol
+n\cdot(\boldsymbol P-\boldsymbol c)=0\\\\
 (\boldsymbol P - \boldsymbol c)\cdot (\boldsymbol P - \boldsymbol c)
 \leq r^2\end{cases}
 \]</span> <img
@@ -300,7 +300,7 @@ alt="image-20230728195146737" />
 </figure>
 <p>​ <strong>Möller-Trumbore射线三角相交算法</strong>: <span
 class="math display">\[
-\begin{cases}\boldsymbol P=\boldsymbol o+t\cdot\boldsymbol d\\\\
+\begin{cases}\boldsymbol P=\boldsymbol o+t*\boldsymbol d\\\\
 \boldsymbol P=\alpha*\boldsymbol P_0 +\beta *\boldsymbol
 P_1+(1-\alpha-\beta)*\boldsymbol P_2 \end{cases}
 \]</span> <img
@@ -378,7 +378,7 @@ class="math inline">\(\alpha、\beta、1-\alpha-\beta\)</span>
 <p><img
 src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/image-20230728212637648.png"
 alt="image-20230728212637648" /> <span class="math display">\[
-\begin{cases}\boldsymbol P=\boldsymbol o+t\cdot\boldsymbol d\\\\
+\begin{cases}\boldsymbol P=\boldsymbol o+t*\boldsymbol d\\\\
 (\boldsymbol P-\boldsymbol c) \cdot (\boldsymbol P-\boldsymbol
 c)=r^2\end{cases}
 \]</span> <img
@@ -407,15 +407,139 @@ class="math inline">\(\begin{cases}t_1=\frac{-b+\sqrt\delta}{2a}
 <p><strong>射线端点与球体的位置关系：</strong></p>
 <p>① 端点在球体内 ：有一个交点，<span
 class="math inline">\(t_2&lt;0、t_1&gt;0\)</span>.</p>
-<p>② 端点在球体表面 ：一个交点 : <span
+<p>② 端点在球体表面 ：包含交点 <span
 class="math inline">\(t=0\)</span>.</p>
 <p>③ 端点在球体外部 ：可能无交点、有一个交点或者两个交点.</p>
-<h3 id="光线与圆柱求交"><span class="math inline">\((2)\)</span>
+<h3 id="光线与正方体求交"><span class="math inline">\((2)\)</span>
+光线与正方体求交</h3>
+<h3 id="光线与圆柱求交"><span class="math inline">\((3)\)</span>
 光线与圆柱求交</h3>
-<h3 id="光线与圆锥求交"><span class="math inline">\((3)\)</span>
+<p><img
+src="C:\Users\lumanjun\AppData\Roaming\Typora\typora-user-images\image-20230729090917926.png"
+alt="image-20230729090917926" /> <span class="math display">\[
+\begin{cases}\boldsymbol P=\boldsymbol o+t*\boldsymbol d\\\\
+圆柱方程
+\begin{cases}
+侧面：(x-\boldsymbol c.x)^2+(z-\boldsymbol c.z)^2=r^2,h_{min}\leq y\leq
+h_{max} \\\\
+下底面：(x-\boldsymbol c.x)^2+(z-\boldsymbol c.z)^2\leq
+r^2,y=h_{min}\\\\
+上底面：(x-\boldsymbol c.x)^2+(z-\boldsymbol c.z)^2\leq r^2,y=h_{max}
+\end{cases} \end{cases}
+\]</span> <strong>与侧面求交：</strong></p>
+<p><img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/image-20230729092322326.png"
+alt="image-20230729092322326" /> <span class="math display">\[
+\begin{cases}
+\boldsymbol c&#39;=(\boldsymbol c.x,\boldsymbol c.z) \\\\
+\boldsymbol o&#39;=(\boldsymbol o.x,\boldsymbol o.z)\\\\
+\boldsymbol d&#39;=(\boldsymbol d.x,\boldsymbol d.z)
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+\begin{cases}\boldsymbol P&#39;=\boldsymbol o&#39;+t*\boldsymbol
+d&#39;\\\\
+(\boldsymbol P&#39;-\boldsymbol c&#39;) \cdot (\boldsymbol
+P&#39;-\boldsymbol c&#39;)=r^2\end{cases}
+\]</span></p>
+<p><strong><span class="math inline">\(\delta\)</span>
+的取值情况：</strong></p>
+<p>① <span class="math inline">\(\delta&lt;0\)</span> ：无交点,
+<strong>射线与圆柱无交点</strong>.</p>
+<p>② <span class="math inline">\(\delta=0\)</span> ：可能有一个交点 :
+<span class="math inline">\(t=\frac{-b+\sqrt\delta}{2a}\)</span></p>
+<p>​ <span class="math inline">\(y=\boldsymbol o.y+t*\boldsymbol
+d.y\)</span> :</p>
+<p>​ <span class="math inline">\(A.\)</span> <span
+class="math inline">\(y\)</span> in <span
+class="math inline">\([h_{min},h_{max}]\)</span> , 有交点.</p>
+<p>​ <span class="math inline">\(B.\)</span> <span
+class="math inline">\(y\)</span> not in <span
+class="math inline">\([h_{min},h_{max}]\)</span> , 无交点.</p>
+<p>③ <span class="math inline">\(\delta&gt;0\)</span> ：可能有两个交点 :
+<span class="math inline">\(\begin{cases}t_1=\frac{-b+\sqrt\delta}{2a}
+\\t_2=\frac{-b-\sqrt\delta}{2a}\end{cases}\)</span></p>
+<p>​ 同上.</p>
+<p><strong>射线端点与圆柱的位置关系：</strong></p>
+<p>① 端点在圆柱内 ：有一个交点.</p>
+<p>② 端点在圆柱表面 ：包含交点 <span
+class="math inline">\(t=0\)</span>.</p>
+<p>③ 端点在圆柱外部 ：可能无交点、有一个交点或者两个交点.</p>
+<h3 id="光线与圆锥求交"><span class="math inline">\((4)\)</span>
 光线与圆锥求交</h3>
-<h3 id="光线与aabb包围盒求交"><span class="math inline">\((4)\)</span>
+<p><img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/image-20230729110030162.png"
+alt="image-20230729110030162" /> <span class="math display">\[
+\begin{cases}\boldsymbol P=\boldsymbol o+t*\boldsymbol d\\\\
+圆锥方程
+\begin{cases}
+侧面：\frac{(\boldsymbol P-\boldsymbol V) \cdot \boldsymbol
+u}{||\boldsymbol P-\boldsymbol V||}=cos \theta \\\\
+底面：(x-c.x)^2+(z-c.z)^2\leq r^2,y=h_{min}
+\end{cases} \end{cases}
+\]</span> <strong>与侧面求交：</strong> <span class="math display">\[
+\begin{cases}\boldsymbol P=\boldsymbol o+t*\boldsymbol d\\\\
+\frac{((\boldsymbol P-\boldsymbol V) \cdot \boldsymbol
+u)^2}{(\boldsymbol P-\boldsymbol V) \cdot (\boldsymbol P-\boldsymbol
+V)}={cos\theta}^2
+\end{cases}
+\]</span> <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/image-20230728192149842.png"
+alt="image-20230728192149842" /></p>
+<p><strong>参考文献：</strong></p>
+<p><a
+target="_blank" rel="noopener" href="https://lousodrome.net/blog/light/2017/01/03/intersection-of-a-ray-and-a-cone/">[1]
+Ray intersect with Cone</a></p>
+<h3 id="光线与aabb包围盒求交"><span class="math inline">\((5)\)</span>
 光线与AABB包围盒求交</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/image-20230729110726428.png"
+alt="image-20230729110726428" />
+<figcaption aria-hidden="true">image-20230729110726428</figcaption>
+</figure>
+<p><strong>相关知识：</strong></p>
+<p>​ 当射线穿入<span
+class="math inline">\(x,y,z\)</span>三个面后，才为穿入了AABB包围盒；</p>
+<p>​ 当射线穿出<span
+class="math inline">\(x,y,z\)</span>中任意一个面后，则穿出了AABB包围盒.</p>
+<p><strong>求解步骤：</strong></p>
+<p><span class="math inline">\(step \ 1:\)</span> 特殊情况处理</p>
+<p>​ <span class="math inline">\(A.\)</span> <span
+class="math inline">\(origin\)</span>在<span
+class="math inline">\(AABB\)</span>内部.</p>
+<p><span class="math inline">\(step \ 2:\)</span>
+计算每个轴平面的相交情况</p>
+<p>​ <span class="math inline">\(A.\)</span> <span
+class="math inline">\(dir\)</span>与当前轴平行.</p>
+<p>​ <span
+class="math inline">\(a.origin\)</span>在当前轴两个平面的外侧，<strong>返回无交点</strong>.</p>
+<p>​ <span
+class="math inline">\(b.origin\)</span>在当前轴两个平面的内侧，继续一下步骤.</p>
+<p>​ <span class="math inline">\(B.\)</span> 计算当前轴的<span
+class="math inline">\(t_{Near}、t_{Far}\)</span>. <span
+class="math display">\[
+\begin{cases}
+t_{Near}=\frac{\boldsymbol B_{Min}[axis]-\boldsymbol
+o[axis]}{\boldsymbol d[axis]} \\\\
+t_{Far}=\frac{\boldsymbol B_{Max}[axis]-\boldsymbol o[axis]}{\boldsymbol
+d[axis]}
+\end{cases}
+\]</span> ​ <span class="math inline">\(if \ t_{Near} &gt; t_{Far}: \ \
+swap(t_{Near}, t_{Far})\)</span></p>
+<p>​ <span class="math inline">\(C.\)</span> 更新<span
+class="math inline">\(t_{Min}、t_{Max}\)</span>. <span
+class="math display">\[
+\begin{cases}
+t_{Min}=max(t_{Min},\ t_{Near})\\\\
+t_{Max}=min(t_{Max},\ t_{Far})
+\end{cases}
+\]</span> <span class="math inline">\(step \ 3:\)</span>
+返回第一个交点</p>
+<p>​ <span class="math inline">\(A.\)</span> <span
+class="math inline">\(t_{Min}&gt;t_{Max}\)</span>，<strong>返回无交点</strong>.</p>
+<p>​ <span class="math inline">\(B.\)</span> <strong>返回<span
+class="math inline">\(t_{Min}\)</span></strong>.</p>
 
       
     </div>
@@ -775,6 +899,236 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/2022-02-28test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blog.jpg">
+      <meta itemprop="name" content="Echo">
+      <meta itemprop="description" content="calm down">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Home">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/26/2022-02-28test/" class="post-title-link" itemprop="url">GitHub Page 搭建个人主页</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-26 22:21:11" itemprop="dateCreated datePublished" datetime="2023-07-26T22:21:11+08:00">2023-07-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/personal-blog-build-2022-03/" itemprop="url" rel="index"><span itemprop="name">/personal blog/build/2022-03</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+
+      
+          <p><strong>github
+Pages——用户编写的、托管在github上的静态网页</strong></p>
+<hr />
+<h2 id="create-personal-repositories">Create Personal Repositories</h2>
+<p>++repository是一个存放项目文件的仓库，之后博客源码和hexo发布后的静态HTML文件全部保存在里面。++</p>
+<ol type="1">
+<li><p><strong>登录自己的github账号</strong> <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647518468944.png"
+alt="enter description here" /></p></li>
+<li><p><strong>点击右上角的'+'号，选择'New
+repository'跳转到下面的界面</strong> <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647518514346.png"
+alt="enter description here" /><br />
+<strong>Repository name:</strong>
+选择-用户名.github.io-的命名格式，之后的site就直接为http://username.github.io
+<strong>Public/Private:</strong>
+当前创建私有仓库已经免费，如果是个人不想公开的代码和日记等，可以选择Private，已经创建好的仓库也可以转换为另一种权限。
+<strong>Initialize this repository with:</strong> 通常会选择'Add a
+README file'</p></li>
+<li><p><strong>创建完毕后，打开仓库，点击⚙setting-Pages，此时界面如下：</strong>
+<img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647519433143.png"
+alt="enter description here" /> <strong>Choose a theme：</strong>
+暂时选择一个默认网页模板，之后可以修改为自己喜欢的主题。
+至此，一个只有readme文件的空仓库就创建好了。</p></li>
+</ol>
+<p><strong>参考链接</strong> <a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/05-hust/articles/13607712.html">不同权限之间的转换方式</a></p>
+<hr />
+<h2 id="git安装">Git安装</h2>
+<ol type="1">
+<li><p><strong>安装过程参考本节最后的链接，安装好的效果如下：</strong>
+<img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647520903724.png"
+alt="enter description here" /></p></li>
+<li><p><strong>打开 Git Bash, 输入git，验证安装是否成功:</strong> <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647520989806.png"
+alt="enter description here" /> ●进行任何操作时，先切换到仓库目录
+●声明为Git仓库+信息提交 <mark>git init</mark> → 初始化本地git仓库
+<mark>git add filename</mark> → 将file添加到[临时缓冲区] <mark>git
+status</mark> → 获取仓库当前的状态 <mark>git commit -m "text commit"
+</mark> → 将[临时缓冲区]的内容提交到仓库 ●关于分支的git指令 <mark>git
+branch a</mark> → 创建分支a <mark>git checkout a</mark> → 切换到分支a
+<mark>git checkout -b a</mark> → 创建分支a的同时进行切换 <mark>git merge
+a</mark> → 在主分支下执行，将a分支与主分支进行合并 <mark>git branch
+-d/-D a</mark> → 删除分支a</p></li>
+</ol>
+<p><strong>参考链接</strong> <a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103325381">git下载安装指南</a></p>
+<hr />
+<h2 id="绑定github">绑定GitHub</h2>
+<ol type="1">
+<li><p><strong>本地内容怎么投放到github上对应的仓库呢？通过什么协议将本地和自己的github进行绑定呢？</strong>
+●<strong>利用SSH登录远程主机：</strong>
+<mark>method1</mark>：口令登录；(需要反复输入密码<br />
+<mark>method2</mark>: 公钥登录；
+●<strong>安全外壳协议(SSH)</strong></p></li>
+<li><p><strong>确认本机是否是否安装 SSH</strong> <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647522852374.png"
+alt="enter description here" /></p></li>
+<li><p><strong>生成密钥</strong> <mark>ssh -keygen -t
+rsa</mark>(通过RSA算法实现) <mark>id_ras</mark> → 密钥(本地)
+<mark>id_rsa.pub</mark> → 公钥(添加到github)</p>
+<p>生成文件的所在路径和目录文件如下： <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647561811480.png"
+alt="enter description here" /></p></li>
+<li><p><strong>将公钥添加到自己的github</strong>
+●通过找到相应路径，用文本模式打开id_rsa.pub复制其中的内容 ● 直接在git
+bash中打开，指令如下 <mark>$ cd ~/.ssh</mark> <mark>$ ls</mark> <mark>$
+cat id_rsa.pub</mark> (注：git中的复制粘贴不是 Ctrl+C 和 Ctrl+V，而是
+Ctrl+insert 和Shift+insert)</p>
+<p>●点击头像-setting-SSH and GPG keys-New SSH key <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647562157635.png"
+alt="enter description here" /> <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563056861.png"
+alt="enter description here" /></p>
+<p><strong>Title:</strong> 选填 <strong>Key:</strong>
+将公钥文件的内容复制到这里</p></li>
+<li><p><strong>验证是否绑定成功</strong> <mark>ssh -T
+git@github.com</mark> (之后键入yes)</p></li>
+</ol>
+<hr />
+<h2 id="实现提交文件">实现提交文件</h2>
+<ol type="1">
+<li><p><strong>基本指令</strong> <mark>pull</mark> → 本地 to 远程仓库
+<mark>push #F44336</mark> → 远程仓库 to 本地 example: <mark>git
+pull/push origin master</mark>(branch name)</p>
+<p>●<strong>情况一:当本地没有 git 仓库</strong> a. 直接将远程仓库 clone
+到本地(无需通过init进行初始化，并已经自动关联了远程仓库) b. 将文件添加并
+commit 到本地仓库 <mark>git add</mark> <mark>git commit -m ""</mark> c.
+将本地仓库的内容push到远程仓库</p>
+<p>●<strong>情况二:本地已有Git仓库，并且进行了多次提交</strong> a.
+关联远程仓库： <mark>git remote add origin http:// </mark> b.
+同步远程和本地仓库： <mark>git pull origin master(this is branch name)
+</mark> c. 新建file <mark>git add test,txt</mark> <mark>git commit -m
+"add test file"</mark> d. 将修改后的内容推到远程仓库： <mark>git push
+origin master</mark>(同上) (注：先pull后push)</p></li>
+</ol>
+<p><strong>参考文献</strong> <a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/265454741">将本仓库更新到远程参考</a>
+<a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103391101">两种情况的详细指南</a></p>
+<hr />
+<h2 id="具体的blog-pages搭建">具体的BLOG Pages搭建</h2>
+<ol type="1">
+<li><p><strong>安装nodejs</strong> <a
+target="_blank" rel="noopener" href="https://nodejs.org/en/">下载地址</a> <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563732842.png"
+alt="enter description here" /> ●测试是否安装成功：用 node -v 和 npm -v
+命令检查版本 <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563776437.png"
+alt="enter description here" />
+●关于设置npm在安装全局模块时的路径和环境变量(当没有安装在默认路径)<a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/105715224">参考链接</a></p></li>
+<li><p><strong>安装Hexo</strong> ● 通过npm安装hexo： <mark>npm install
+-g hexo-cli #F44336</mark> ●输入 <mark>hexo init #F44336</mark>
+命令初始化博客 ●.相关指令 <mark>hexo g</mark> → 静态部署 <mark>hexo s
+</mark> → 本地预览静态网页 <mark>hexo d</mark>→
+上传网页文件到github</p></li>
+<li><p><strong>将博客发布到github上环境配置</strong> ●
+配置blog目录中的_config.yml(注意":"号后的空格) <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564081849.png"
+alt="enter description here" /> <strong>repo:</strong> 目标仓库名
+<strong>branch：</strong>
+所在分支(注：这里提交的是hexo相关的框架文件，并不是blog目录文件)</p>
+<p>●Deployer配置： error : Deployer not find:git reason:
+没安装hexo-deployer-git插件 solution: npm install hexo-deployer-git
+--save</p>
+<p>●输入以下指令： <mark>hexo clean</mark> → 清除缓存文件 db.json
+和已生成的静态文件 public <mark>hexo g</mark>→
+生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)
+<mark>hexo d</mark> → 自动生成网站静态文件，并部署到设定的仓库(hexo
+deploy 的缩写)</p>
+<p>●配置url <strong>情况一：xxx为用户名</strong> url:
+http://xxx.github.io root: / <strong>情况二：xxx不是用户名</strong> url:
+.../xxx.github.io root: /xxx.github.io</p></li>
+</ol>
+<p><strong>参考链接</strong> <a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/127786638">config.yml文件内容详解</a></p>
+<ol start="4" type="1">
+<li><strong>主题更换</strong> ●config.yml文件中相关的部分： <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564319699.png"
+alt="Extensions part" /> ●themes文件夹中相关的部分：
+当前该目录下又两个主题，在config.yml中选择了“fexo”主题 <img
+src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564488865.png"
+alt="enter description here" /> ●主题配置的过程
+<ol type="a">
+<li>在下面的hexo主题集合中选择好自己喜欢的主题</li>
+<li>打开博客根目录Blog文件夹，右键Git
+Bash，输入如下代码将目标主题下载到目录Blog/themes： <mark>git clone
+(http) themes/next</mark></li>
+<li>修改blog目录下的config.yml文件themes(注意冒号后的空格)</li>
+<li>主题页面的修改文件为主题文件内的_config.yml文件，如何修改参鉴clone地址的readme信息</li>
+</ol></li>
+</ol>
+<p><strong>参考链接：</strong> <a
+target="_blank" rel="noopener" href="https://github.com/FoxerLee/awesome-hexo-themes">hexo主题集合</a></p>
+<hr />
+<h2 id="之后要增加的内容">之后要增加的内容</h2>
+<p><mark> 怎么把具体的博客内容发送到自己的pages上
+怎么把hexo原代码也发送到远程仓库 其他一些操作指令 小书匠图库的配置 ....
+</mark></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/2022-03-17%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1064,236 +1418,6 @@ target="_blank" rel="noopener" href="https://www.cnblogs.com/jy333/p/14363780.ht
 <img
 src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1649748613496.png"
 alt="概率密度转换" /></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/2022-02-28test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blog.jpg">
-      <meta itemprop="name" content="Echo">
-      <meta itemprop="description" content="calm down">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Home">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/26/2022-02-28test/" class="post-title-link" itemprop="url">GitHub Page 搭建个人主页</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-07-26 22:21:11" itemprop="dateCreated datePublished" datetime="2023-07-26T22:21:11+08:00">2023-07-26</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/personal-blog-build-2022-03/" itemprop="url" rel="index"><span itemprop="name">/personal blog/build/2022-03</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-
-      
-          <p><strong>github
-Pages——用户编写的、托管在github上的静态网页</strong></p>
-<hr />
-<h2 id="create-personal-repositories">Create Personal Repositories</h2>
-<p>++repository是一个存放项目文件的仓库，之后博客源码和hexo发布后的静态HTML文件全部保存在里面。++</p>
-<ol type="1">
-<li><p><strong>登录自己的github账号</strong> <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647518468944.png"
-alt="enter description here" /></p></li>
-<li><p><strong>点击右上角的'+'号，选择'New
-repository'跳转到下面的界面</strong> <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647518514346.png"
-alt="enter description here" /><br />
-<strong>Repository name:</strong>
-选择-用户名.github.io-的命名格式，之后的site就直接为http://username.github.io
-<strong>Public/Private:</strong>
-当前创建私有仓库已经免费，如果是个人不想公开的代码和日记等，可以选择Private，已经创建好的仓库也可以转换为另一种权限。
-<strong>Initialize this repository with:</strong> 通常会选择'Add a
-README file'</p></li>
-<li><p><strong>创建完毕后，打开仓库，点击⚙setting-Pages，此时界面如下：</strong>
-<img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647519433143.png"
-alt="enter description here" /> <strong>Choose a theme：</strong>
-暂时选择一个默认网页模板，之后可以修改为自己喜欢的主题。
-至此，一个只有readme文件的空仓库就创建好了。</p></li>
-</ol>
-<p><strong>参考链接</strong> <a
-target="_blank" rel="noopener" href="https://www.cnblogs.com/05-hust/articles/13607712.html">不同权限之间的转换方式</a></p>
-<hr />
-<h2 id="git安装">Git安装</h2>
-<ol type="1">
-<li><p><strong>安装过程参考本节最后的链接，安装好的效果如下：</strong>
-<img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647520903724.png"
-alt="enter description here" /></p></li>
-<li><p><strong>打开 Git Bash, 输入git，验证安装是否成功:</strong> <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647520989806.png"
-alt="enter description here" /> ●进行任何操作时，先切换到仓库目录
-●声明为Git仓库+信息提交 <mark>git init</mark> → 初始化本地git仓库
-<mark>git add filename</mark> → 将file添加到[临时缓冲区] <mark>git
-status</mark> → 获取仓库当前的状态 <mark>git commit -m "text commit"
-</mark> → 将[临时缓冲区]的内容提交到仓库 ●关于分支的git指令 <mark>git
-branch a</mark> → 创建分支a <mark>git checkout a</mark> → 切换到分支a
-<mark>git checkout -b a</mark> → 创建分支a的同时进行切换 <mark>git merge
-a</mark> → 在主分支下执行，将a分支与主分支进行合并 <mark>git branch
--d/-D a</mark> → 删除分支a</p></li>
-</ol>
-<p><strong>参考链接</strong> <a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103325381">git下载安装指南</a></p>
-<hr />
-<h2 id="绑定github">绑定GitHub</h2>
-<ol type="1">
-<li><p><strong>本地内容怎么投放到github上对应的仓库呢？通过什么协议将本地和自己的github进行绑定呢？</strong>
-●<strong>利用SSH登录远程主机：</strong>
-<mark>method1</mark>：口令登录；(需要反复输入密码<br />
-<mark>method2</mark>: 公钥登录；
-●<strong>安全外壳协议(SSH)</strong></p></li>
-<li><p><strong>确认本机是否是否安装 SSH</strong> <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647522852374.png"
-alt="enter description here" /></p></li>
-<li><p><strong>生成密钥</strong> <mark>ssh -keygen -t
-rsa</mark>(通过RSA算法实现) <mark>id_ras</mark> → 密钥(本地)
-<mark>id_rsa.pub</mark> → 公钥(添加到github)</p>
-<p>生成文件的所在路径和目录文件如下： <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647561811480.png"
-alt="enter description here" /></p></li>
-<li><p><strong>将公钥添加到自己的github</strong>
-●通过找到相应路径，用文本模式打开id_rsa.pub复制其中的内容 ● 直接在git
-bash中打开，指令如下 <mark>$ cd ~/.ssh</mark> <mark>$ ls</mark> <mark>$
-cat id_rsa.pub</mark> (注：git中的复制粘贴不是 Ctrl+C 和 Ctrl+V，而是
-Ctrl+insert 和Shift+insert)</p>
-<p>●点击头像-setting-SSH and GPG keys-New SSH key <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647562157635.png"
-alt="enter description here" /> <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563056861.png"
-alt="enter description here" /></p>
-<p><strong>Title:</strong> 选填 <strong>Key:</strong>
-将公钥文件的内容复制到这里</p></li>
-<li><p><strong>验证是否绑定成功</strong> <mark>ssh -T
-git@github.com</mark> (之后键入yes)</p></li>
-</ol>
-<hr />
-<h2 id="实现提交文件">实现提交文件</h2>
-<ol type="1">
-<li><p><strong>基本指令</strong> <mark>pull</mark> → 本地 to 远程仓库
-<mark>push #F44336</mark> → 远程仓库 to 本地 example: <mark>git
-pull/push origin master</mark>(branch name)</p>
-<p>●<strong>情况一:当本地没有 git 仓库</strong> a. 直接将远程仓库 clone
-到本地(无需通过init进行初始化，并已经自动关联了远程仓库) b. 将文件添加并
-commit 到本地仓库 <mark>git add</mark> <mark>git commit -m ""</mark> c.
-将本地仓库的内容push到远程仓库</p>
-<p>●<strong>情况二:本地已有Git仓库，并且进行了多次提交</strong> a.
-关联远程仓库： <mark>git remote add origin http:// </mark> b.
-同步远程和本地仓库： <mark>git pull origin master(this is branch name)
-</mark> c. 新建file <mark>git add test,txt</mark> <mark>git commit -m
-"add test file"</mark> d. 将修改后的内容推到远程仓库： <mark>git push
-origin master</mark>(同上) (注：先pull后push)</p></li>
-</ol>
-<p><strong>参考文献</strong> <a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/265454741">将本仓库更新到远程参考</a>
-<a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103391101">两种情况的详细指南</a></p>
-<hr />
-<h2 id="具体的blog-pages搭建">具体的BLOG Pages搭建</h2>
-<ol type="1">
-<li><p><strong>安装nodejs</strong> <a
-target="_blank" rel="noopener" href="https://nodejs.org/en/">下载地址</a> <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563732842.png"
-alt="enter description here" /> ●测试是否安装成功：用 node -v 和 npm -v
-命令检查版本 <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647563776437.png"
-alt="enter description here" />
-●关于设置npm在安装全局模块时的路径和环境变量(当没有安装在默认路径)<a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/105715224">参考链接</a></p></li>
-<li><p><strong>安装Hexo</strong> ● 通过npm安装hexo： <mark>npm install
--g hexo-cli #F44336</mark> ●输入 <mark>hexo init #F44336</mark>
-命令初始化博客 ●.相关指令 <mark>hexo g</mark> → 静态部署 <mark>hexo s
-</mark> → 本地预览静态网页 <mark>hexo d</mark>→
-上传网页文件到github</p></li>
-<li><p><strong>将博客发布到github上环境配置</strong> ●
-配置blog目录中的_config.yml(注意":"号后的空格) <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564081849.png"
-alt="enter description here" /> <strong>repo:</strong> 目标仓库名
-<strong>branch：</strong>
-所在分支(注：这里提交的是hexo相关的框架文件，并不是blog目录文件)</p>
-<p>●Deployer配置： error : Deployer not find:git reason:
-没安装hexo-deployer-git插件 solution: npm install hexo-deployer-git
---save</p>
-<p>●输入以下指令： <mark>hexo clean</mark> → 清除缓存文件 db.json
-和已生成的静态文件 public <mark>hexo g</mark>→
-生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)
-<mark>hexo d</mark> → 自动生成网站静态文件，并部署到设定的仓库(hexo
-deploy 的缩写)</p>
-<p>●配置url <strong>情况一：xxx为用户名</strong> url:
-http://xxx.github.io root: / <strong>情况二：xxx不是用户名</strong> url:
-.../xxx.github.io root: /xxx.github.io</p></li>
-</ol>
-<p><strong>参考链接</strong> <a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/127786638">config.yml文件内容详解</a></p>
-<ol start="4" type="1">
-<li><strong>主题更换</strong> ●config.yml文件中相关的部分： <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564319699.png"
-alt="Extensions part" /> ●themes文件夹中相关的部分：
-当前该目录下又两个主题，在config.yml中选择了“fexo”主题 <img
-src="https://raw.githubusercontent.com/echolumj/blogImg/main/blog/1647564488865.png"
-alt="enter description here" /> ●主题配置的过程
-<ol type="a">
-<li>在下面的hexo主题集合中选择好自己喜欢的主题</li>
-<li>打开博客根目录Blog文件夹，右键Git
-Bash，输入如下代码将目标主题下载到目录Blog/themes： <mark>git clone
-(http) themes/next</mark></li>
-<li>修改blog目录下的config.yml文件themes(注意冒号后的空格)</li>
-<li>主题页面的修改文件为主题文件内的_config.yml文件，如何修改参鉴clone地址的readme信息</li>
-</ol></li>
-</ol>
-<p><strong>参考链接：</strong> <a
-target="_blank" rel="noopener" href="https://github.com/FoxerLee/awesome-hexo-themes">hexo主题集合</a></p>
-<hr />
-<h2 id="之后要增加的内容">之后要增加的内容</h2>
-<p><mark> 怎么把具体的博客内容发送到自己的pages上
-怎么把hexo原代码也发送到远程仓库 其他一些操作指令 小书匠图库的配置 ....
-</mark></p>
 
       
     </div>
